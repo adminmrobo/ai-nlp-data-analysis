@@ -101,7 +101,7 @@ def review(P, B):
             prev = l['node'][0]
         for qi, q in enumerate(P['orig'][n]['items']):
             qid = f'lab:quiz/{P["num"]}-w{n}-{qi+1}'; node(qid, 'QuizItem', strip(q['q'])[:60], f'review quiz {n}-{qi+1}', '#orig')
-            edges.append({'s': qid, 'p': 'lab:assesses', 'o': lvnode(n, q.get('lv', 0)), 'anchor': '#orig', 'confidence': 'high'})
+            edges.append({'s': qid, 'p': 'lab:assesses', 'o': (L[q['pg'][0]]['levels'][q['pg'][1]]['node'][0] if q.get('pg') else lvnode(n, q.get('lv', 0))), 'anchor': '#orig', 'confidence': 'high'})
         cid = f'lab:quiz/{P["num"]}-calc{n}'; node(cid, 'QuizItem', strip(P['calc'][n]['title']), f'calc {n}', '#calc')
         edges.append({'s': cid, 'p': 'lab:assesses', 'o': lvnode(n, int(P['calc'][n]['lv'][-1]) - 1), 'anchor': '#calc', 'confidence': 'high'})
     for r in P['refs']:

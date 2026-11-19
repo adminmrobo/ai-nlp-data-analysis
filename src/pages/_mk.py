@@ -42,6 +42,35 @@ def L(id, short, title, tags, lead, key, node, limit_short, why, pair, talk, sim
     if sim2: l['sim2_title'], l['sim2'] = sim2
     return l
 
+import re as _re
+CIRC = '①②③④⑤⑥⑦⑧⑨⑩'
+def _num(text):
+    """90자 넘는 나열문을 줄로 끊는다(수포자 감사 P3): 이미 ①이 있으면 번호 앞에서, 화살표 흐름은 → 앞에서, 쉼표 나열은 ①②③로."""
+    if not isinstance(text, str): return text
+    out = []
+    for sent in _re.split(r'(?<=[.요다])\s', text):
+        plain = _re.sub('<[^>]+>', '', sent)
+        if len(plain) > 90 and '<br>' not in sent:
+            if '①' in sent:
+                sent = _re.sub(r'\s*([②③④⑤⑥⑦⑧⑨])', r'<br>\1', sent).replace('①', '<br>①', 1) if sent.count('①') == 1 else sent
+            elif sent.count('→') >= 2:
+                sent = _re.sub(r'\s*→\s*', '<br>→ ', sent)
+            else:
+                m = _re.match(r'^(.{2,40}?)[:：]\s(.+)$', sent)
+                head, body = (m.group(1) + ':', m.group(2)) if m else ('', sent)
+                end = body.endswith('.'); body = body.rstrip('.')
+                parts = _re.split(r',\s(?![^()]*\))', body)
+                if 3 <= len(parts) <= 10:
+                    sent = head + ''.join(f'<br>{CIRC[k]} {p}' for k, p in enumerate(parts)) + ('.' if end else '')
+                    if not head: sent = sent[4:]
+        out.append(sent)
+    return ' '.join(out)
+def _tidy(l):
+    for k in ('left', 'right'): l['pair'][k] = _num(l['pair'][k])
+    for k in ('problem', 'limit', 'solve'): l['why'][k] = _num(l['why'][k])
+    l['lead'] = _num(l['lead'])
+    l['explain']['steps'] = [_num(x) for x in l['explain']['steps']]
+    return l
 TOK = ['START', 'END', 'PAD', 'UNK', 'SOS', 'EOS', 'MASK', 'CLS', 'SEP']
 def _fix(o):
     """<START> 같은 특수 토큰이 HTML 태그로 읽히지 않게 〈START〉로 바꾼다."""
@@ -56,6 +85,10 @@ def _fix(o):
 def mk(num, title, eyebrow, question, intro, kpis, three, levels, outro, next_q, changes=None, duel=None, dash=None, abbr=None, examples=None, refs=None, sources=None, hero=None, doc_line=None, extra_gloss=None):
     lec = BY[num][3]; prev, nxt = nav(num)
     levels = _fix(levels)
+    from _bridge import B as _BR
+    for i, l in enumerate(levels):
+        if not l.get('bridge') and (num, i) in _BR: l['bridge'] = dict(gen=_BR[(num, i)][0], gen_lim=_BR[(num, i)][1])
+        _tidy(l)
     for i, l in enumerate(levels):
         oid = l['id']; l['id'] = f'lv{i+1}'
         if l.get('math') and 'try_' in l['math']: l['math']['try'] = l['math'].pop('try_')

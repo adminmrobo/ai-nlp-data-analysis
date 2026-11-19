@@ -62,3 +62,5 @@ P = mk('3-1', '형태소 분석 개요 — 자르고, 원형으로 돌리고, �
   '이 전처리를 영어 문장에 실제로 적용하면 어떤 결과가 나올까? NLTK는 무엇을 해 줄까?',
   abbr=[('NLP', 'Natural Language Processing, 자연어 처리'), ('NLTK', 'Natural Language Toolkit, 파이썬 자연어 처리 라이브러리'), ('KoNLPy', 'Korean NLP in Python, 한국어 형태소 분석기 모음')],
   changes=['원 강의 3회차 학습내용 1 「형태소 분석 개요」를 이 쪽(3-1)으로 옮겼습니다. 앞 판의 칸 ①·②가 이 쪽의 칸 ②·③이 되었고, 교안의 어간·표제어 비교표를 칸 ③의 두 번째 실험으로 더했습니다.'])
+# 수포자 감사 P3: 본문에서 함수 이름 빼기
+P['levels'][1]['explain']['steps'] = [x.replace("품사 태깅: 영어는 NLTK의 pos_tag(NNP·VBZ 등), 한국어는 Okt의 pos(Noun·Josa 등)로 붙여요.", "품사 태깅: 영어는 NLTK로 NNP(고유명사)·VBZ(동사) 같은 태그를, 한국어는 Okt로 Noun(명사)·Josa(조사) 같은 태그를 붙여요.") for x in P['levels'][1]['explain']['steps']]
