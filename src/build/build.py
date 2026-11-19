@@ -107,7 +107,7 @@ def head(P, title, desc, fname):
 '''
 
 def nav(links, label):
-    a = '<a href="#tower">건물 안내</a>' + ''.join(f'<a href="#{i}">{e(t)}</a>' for i, t in links)
+    a = '<a href="#cover">표지</a>' + ''.join(f'<a href="#{i}">{e(t)}</a>' for i, t in links)
     return f'<nav class="top" aria-label="섹션 바로가기"><div class="wrap"><a class="logo" href="index.html"><i></i>{e(label)}</a><div class="links">{a}</div></div></nav>\n'
 
 def footer(P, extra=''):
@@ -337,7 +337,7 @@ def page(P):
     P['flow'] = []
     for l in L: P['flow'] += [[l['node'][2], 0], [l['limit_short'], 1]]
     links = [('three', '3줄 요약'), ('cast', '연구실 식구')] + [(l['id'], f'{i+1} {l["short"]}') for i, l in enumerate(L)] + ([('dash', '대시보드')] if P.get('dash') else []) + ([('duel', '대결')] if P.get('duel') else []) + [('sum', '정리'), ('kg', '색인'), ('export', '꾸러미')]
-    o = [head(P, P['title'], P['desc'], P['file']), nav(links, f'{SERIES_SHORT} {num}'), tower.tower_html(num), cover(P, M, f'cover_{num}')]
+    o = [head(P, P['title'], P['desc'], P['file']), nav(links, f'{SERIES_SHORT} {num}'), cover(P, M, f'cover_{num}')]
     kp = ''.join(f'<div class="kpi {c}"><b>{v}</b><span>{t}</span></div>' for v, t, c in P['kpis'])
     hero_talk = ''.join(say(*t, M) for t in P['hero_talk'])
     o.append(f'''<header class="hero" id="hero"><div class="wrap hero-grid"><div class="hero-text"><span class="eyebrow">{e(P["eyebrow"])}</span><h1>{P["title"]}</h1><p class="q">{P["question"]}</p><p>{P["intro"]}</p><section class="kpis k4">{kp}</section></div><div class="dialog">{hero_talk}</div></div></header>''')

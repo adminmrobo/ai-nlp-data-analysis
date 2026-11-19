@@ -45,7 +45,7 @@ def review(P, B):
     for k, v in B.DEFM.items(): M.add(k, v)
     nums = P['weeks']
     links = [('three', '3줄 요약'), ('cast', '식구'), ('summary', '1부 요약'), ('orig', '2부 교안 문제'), ('calc', '3부 업무 계산'), ('score', '점수'), ('kg', '색인'), ('export', '꾸러미')]
-    o = [B.head(P, P['title'], P['desc'], P['file']), B.nav(links, f'{B.SERIES_SHORT} {P["num"]}'), B.tower.tower_html(P['key']), B.cover(P, M, f'cover_{P["key"]}')]
+    o = [B.head(P, P['title'], P['desc'], P['file']), B.nav(links, f'{B.SERIES_SHORT} {P["num"]}'), B.cover(P, M, f'cover_{P["key"]}')]
     hero_talk = ''.join(B.say(*t, M) for t in P['hero_talk'])
     kp = ''.join(f'<div class="kpi {c}"><b>{v}</b><span>{t}</span></div>' for v, t, c in P['kpis'])
     o.append(f'<header class="hero" id="hero"><div class="wrap hero-grid"><div class="hero-text"><span class="eyebrow">{e(P["eyebrow"])}</span><h1>{P["title"]}</h1><p class="q">{P["question"]}</p><p>{P["intro"]}</p><section class="kpis k4">{kp}</section></div><div class="dialog">{hero_talk}</div></div></header>')
@@ -122,7 +122,7 @@ def index(P, B):
     M = B.Moods(); L = lessons(B)
     for k, v in B.DEFM.items(): M.add(k, v)
     links = [('three', '3줄 요약'), ('map', '회차 지도'), ('keys', '한 줄 핵심'), ('dash', '종합 대시보드'), ('path', '개념 사다리'), ('how', '식구·사용법'), ('about', '자료와 원칙')]
-    o = [B.head(P, P['title'], P['desc'], P['file']), B.nav(links, B.SERIES_SHORT), B.tower.tower_html('00'), B.cover(P, M, 'cover_index')]
+    o = [B.head(P, P['title'], P['desc'], P['file']), B.nav(links, B.SERIES_SHORT), B.cover(P, M, 'cover_index')]
     kp = ''.join(f'<div class="kpi {c}"><b>{v}</b><span>{t}</span></div>' for v, t, c in P['kpis'])
     o.append(thumbs_css(B))
     WKS = ['01', '02', '03', '04', '06', '07', '08', '09']
