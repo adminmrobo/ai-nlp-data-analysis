@@ -33,52 +33,25 @@ REV = [('three', '안내 데스크', '3줄 요약'), ('cast', '팀 라운지', '
 IDX = [('three', '안내 데스크', '3줄 요약'), ('map', '층별 안내판', '회차 지도'), ('keys', '한 줄 핵심 게시판', '한 줄 핵심 모음'), ('dash', '종합 상황실', '종합 대시보드'),
        ('path', '개념 계단', '개념 사다리'), ('how', '식구 라운지', '식구 · 사용법'), ('about', '자료 보관실', '자료와 원칙')]
 
-# 아래에서 위로: 로비 → 1~4층 → 5층 중간 점검 라운지 → 6~9층 → 10층 옥상 전망대
-FLOORS = [
- dict(key='00', label='L', file='index.html', dept='로비 · 안내 데스크', en='Lobby & Directory', branch='말귀 연구소',
-      title='목차 — 인공지능과 자연어 데이터 분석', ep='목차',
-      biz='말귀 타워의 로비입니다. 층별 안내판에서 팀(회차)을 고르면 그 층으로 올라갑니다.', rooms=IDX),
- dict(key='01', label='1F', file='01_ai_and_nlp_data.html', dept='고객의 소리(VOC) 접수센터', en='Voice of Customer Desk', branch='말귀 연구소',
-      title='인공지능과 자연어 데이터 분석', ep='01회차',
-      biz='매일 들어오는 리뷰·문의·댓글을 처음 받는 팀이에요. 규칙으로 처리할지 데이터로 배울지 정하고, 자연어가 표와 어떻게 다른지 따집니다.',
-      rooms=LES('규칙 대 학습 회의실', '말 쪼개기 작업대', '감성 판정 데스크', '규칙과 학습', '자연어 데이터', '감성 분석')),
- dict(key='02', label='2F', file='02_nlp_process_tools.html', dept='데이터 수집·파이프라인실', en='Data Pipeline', branch='말귀 연구소',
-      title='자연어 데이터 분석 프로세스 및 모델', ep='02회차',
-      biz='파일·API·크롤링으로 글을 모으고, 검증과 전처리로 분석할 수 있는 상태까지 만드는 팀이에요. 단어 순서에 확률을 매기는 언어 모델도 여기서 시작합니다.',
-      rooms=LES('수집 경로 상황판', '전처리 공정실', '다음 단어 예측실', '수집', '검증·전처리', '언어 모델')),
- dict(key='03', label='3F', file='03_morpheme_corpus.html', dept='형태소 분석실', en='Morphology Lab', branch='말귀 연구소',
-      title='자연어 데이터 분석을 위한 전처리 과정: 형태소와 말뭉치', ep='03회차',
-      biz='영어와 한국어 문장을 분석할 수 있는 조각(토큰)으로 나누는 팀이에요. 조사·어미를 떼고, 불용어를 고르고, 신조어를 사전에 올립니다.',
-      rooms=LES('토큰 절단실', '불용어 선별대', '사용자 사전 서고', '토큰화', '불용어와 원형', '말뭉치와 사전')),
- dict(key='04', label='4F', file='04_word_embedding.html', dept='키워드·토픽 분석팀', en='Keyword & Topic Analytics', branch='말귀 연구소',
-      title='자연어 처리를 위한 워드 임베딩 알아보기', ep='04회차',
-      biz='단어를 숫자 벡터로 바꾸고, 문서마다 핵심 키워드(TF-IDF)와 숨은 주제(LDA)를 찾는 팀이에요.',
-      rooms=LES('벡터 변환실', 'TF-IDF 랭킹실', '토픽 지도실', '원핫과 벡터', 'TF-IDF', '토픽 모델')),
- dict(key='05', label='5F', file='05_midterm_review.html', dept='중간 점검 라운지', en='Mid-term Review Lounge', branch='모든 팀 공용 공간',
-      title='중간 요약정리 및 퀴즈 — 1~4회차', ep='1~4회차 점검',
-      biz='1~4층을 돌아본 연구원들이 쉬어 가며 요약을 보고, 교안 문제와 업무 계산으로 점검하는 라운지예요.', rooms=REV),
- dict(key='06', label='6F', file='06_word2vec.html', dept='의미 지도실', en='Semantic Map Studio', branch='말귀 연구소',
-      title='인공지능 자연어 처리를 위한 Word2Vec 활용', ep='06회차',
-      biz='"배송이 빨라요"와 "배송이 신속해요"를 같은 뜻으로 묶는 팀이에요. 단어를 지도 위의 점으로 놓고 거리와 방향을 잽니다.',
-      rooms=LES('문맥 관찰실', '벡터 연산 보드', '유사도 측정실', '분포 가설', '벡터 연산', '유사도')),
- dict(key='07', label='7F', file='07_rnn_lstm_seq2seq.html', dept='문맥 기억팀', en='Sequence Memory Team', branch='말귀 연구소',
-      title='인공지능 자연어 분석과 텍스트 생성: 기본', ep='07회차',
-      biz='리뷰를 분류하고 점수를 예측하며, 단어를 순서대로 읽어 기억하는 모델(RNN·LSTM)과 문장을 만들어 내는 모델(Seq2Seq)을 다루는 팀이에요.',
-      rooms=LES('분류·평가실', '기억 수로실', '번역 압축실', '분류와 평가', 'RNN과 LSTM', 'Seq2Seq')),
- dict(key='08', label='8F', file='08_attention_transformer.html', dept='주목·번역센터', en='Attention & Translation Center', branch='말귀 연구소',
-      title='인공지능 자연어 분석과 텍스트 생성: 고급', ep='08회차',
-      biz='긴 문장을 번역할 때 필요한 곳에 "주목"하게 만드는 팀이에요. 빔 서치, 어텐션, 트랜스포머를 차례로 들여옵니다.',
-      rooms=LES('빔 서치 탐색실', '어텐션 히트맵실', '트랜스포머 엔진실', '한계와 개선', '어텐션', '트랜스포머')),
- dict(key='09', label='9F', file='09_modern_llm.html', dept='LLM 혁신본부', en='LLM Innovation Office', branch='말귀 연구소',
-      title='최신 인공지능 언어모델 엿보기', ep='09회차',
-      biz='GPT·BERT 같은 사전훈련 모델을 불러와 프롬프트로 일을 시키고, 회사 문서를 검색해 답을 보강(RAG)하는 팀이에요.',
-      rooms=LES('GPT·BERT 비교실', '프롬프트 작업실', 'RAG 문서고', 'GPT와 BERT', '전이학습·프롬프트', 'LLM과 RAG')),
- dict(key='10', label='10F', file='10_final_review.html', dept='옥상 전망대', en='Rooftop Review Deck', branch='모든 팀 공용 공간',
-      title='기말 요약정리 및 퀴즈 — 6~9회차', ep='6~9회차 점검',
-      biz='건물 맨 위에서 6~9층의 도구를 한눈에 내려다보며 요약하고, 교안 문제와 업무 계산으로 마무리하는 전망대예요.', rooms=REV),
-]
+# 아래에서 위로: 로비 → 강의 1~4회차(3쪽씩) → 5회 중간 점검 라운지 → 강의 6~9회차(3쪽씩) → 10회 옥상 전망대
+import sys as _s; _s.path.insert(0, os.path.join(os.path.dirname(B), 'pages'))
+from _mk import SEQ as _SEQ
+DASHP = {'1-1', '2-3', '3-3', '4-2', '6-3', '7-1', '8-2', '9-2'}
+DUELP = {'1-1', '2-1', '3-3', '4-2', '6-3', '7-2', '8-3', '9-2'}
+LECTN = {1: '인공지능과 자연어 데이터 분석', 2: '자연어 데이터 분석 프로세스 및 모델', 3: '전처리: 형태소와 말뭉치', 4: '워드 임베딩', 5: 'Word2Vec 활용', 6: '텍스트 생성: 기본', 7: '텍스트 생성: 고급', 8: '최신 인공지능 언어모델'}
+def _rooms(num):
+    r = [('three', '안내 데스크', '3줄 요약'), ('cast', '팀 라운지', '연구실 식구'), ('lv1', '작업실 ①', '칸 ①'), ('lv2', '작업실 ②', '칸 ②'), ('lv3', '작업실 ③', '칸 ③')]
+    if num in DASHP: r.append(('dash', '상황실', '한눈에 보는 대시보드'))
+    if num in DUELP: r.append(('duel', '대결 홀', '초파리 대 주판봇 대결'))
+    return r + [('sum', '정리 데스크', '정리'), ('kg', '자료실', '지식 색인 · 꾸러미')]
+FLOORS = [dict(key='00', label='L', file='index.html', dept='로비 · 안내 데스크', en='Lobby & Directory', branch='말귀 연구소', title='목차 — 인공지능과 자연어 데이터 분석', ep='목차', biz='말귀 타워의 로비입니다. 층별 안내판에서 팀(쪽)을 고르면 그 층으로 올라갑니다.', rooms=IDX)]
+for _i, (_n, _f, _t, _l) in enumerate(_SEQ):
+    if _l == 0:
+        FLOORS.append(dict(key=_n, label=f'{_i+1}F', file=_f, dept='중간 점검 라운지' if _n == '5' else '옥상 전망대', en='Review Lounge' if _n == '5' else 'Rooftop Review Deck', branch='모든 팀 공용 공간', title=_t + (' — 1~4회차' if _n == '5' else ' — 6~9회차'), ep=f'{_n}회', biz='아래층들을 돌아본 연구원들이 요약을 보고, 교안 문제와 업무 계산으로 점검하는 곳이에요.', rooms=REV))
+    else:
+        FLOORS.append(dict(key=_n, label=f'{_i+1}F', file=_f, dept=_t, en=f'Session {_n}', branch=f'원 강의 {_l}회차 · {LECTN[_l]}', title=_t, ep=f'{_n}회차', biz=f'원 강의 {_l}회차 「{LECTN[_l]}」의 학습 내용 하나를 칸 세 개로 나눠 다루는 팀이에요.', rooms=_rooms(_n)))
 for i, f in enumerate(FLOORS):
-    f['color'] = '#5d6278' if f['key'] in ('00',) else ('#138a52' if f['key'] in ('05', '10') else PAL[(i - 1) % len(PAL)])
+    f['color'] = '#5d6278' if f['key'] in ('00',) else ('#138a52' if f['key'] in ('5', '10') else PAL[(i - 1) % len(PAL)])
 KEYS = [f['key'] for f in FLOORS]
 BYKEY = {f['key']: f for f in FLOORS}
 
@@ -128,7 +101,7 @@ def _panel_index(f):
     return f'''<aside class="tw-panel" aria-label="층별 안내판">
 <p class="tw-co"><b>{e(COMPANY["ko"])}</b> {e(COMPANY["hq"])} · <span>{e(COMPANY["en"])}</span></p>
 <h2>층별 안내판</h2>
-<p class="tw-biz">{e(COMPANY["motto"])}. 여덟 팀이 한 층씩 쓰고, 5층 라운지와 10층 옥상 전망대에서 요약정리와 퀴즈를 봅니다. 건물의 층을 누르거나 아래 안내판에서 골라 올라가세요.</p>
+<p class="tw-biz">{e(COMPANY["motto"])}. 스물네 팀이 한 층씩 쓰고, 13층 라운지와 26층 옥상 전망대에서 요약정리와 퀴즈를 봅니다. 건물의 층을 누르거나 아래 안내판에서 골라 올라가세요.</p>
 <div class="tw-clock" aria-label="세계 지사 시각">{clocks}</div>
 <ol class="tw-dir">{"".join(rows)}</ol>
 <p class="tw-note">{e(COMPANY["note"])}</p>
@@ -141,7 +114,7 @@ def tower_html(key):
     tools = ('<button type="button" data-v="b" class="on">건물 전체</button><button type="button" data-v="spin" aria-pressed="true">자동 회전</button>' if idx else
              '<button type="button" data-v="b">건물 전체</button><button type="button" data-v="p" class="on">이 층 평면</button>')
     hint = '드래그로 돌려 보고 층을 누르면 안내 카드가 열려요' if idx else '방을 누르면 그 칸으로 내려갑니다 · 드래그로 돌려 보기'
-    cap = (f'{COMPANY["ko"]} 3D 모형: 로비부터 10층 전망대까지 11개 층, 층마다 한 팀(회차)' if idx else
+    cap = (f'{COMPANY["ko"]} 3D 모형: 로비부터 26층 전망대까지 27개 층, 층마다 한 팀(회차)' if idx else
            f'{COMPANY["ko"]} 3D 모형에서 {f["label"]} {f["dept"]}을(를) 건물 밖으로 꺼내 보여 주는 층 평면')
     data = json.dumps(_data(key), ensure_ascii=False).replace('</', '<\\/')
     imap = json.dumps({'imports': {'three': f'https://cdn.jsdelivr.net/npm/three@{THREE_VER}/build/three.module.js',

@@ -13,7 +13,7 @@ sys.path.insert(0, B)
 import tower  # 3D 본사 타워 첫 화면 (tower.py · tower.js · tower.css)
 SP = json.load(open(os.path.join(B, 'sprites.json'), encoding='utf-8'))
 CSS = open(os.path.join(B, 'base.css'), encoding='utf-8').read() + '\n' + open(os.path.join(B, 'plain.css'), encoding='utf-8').read()
-JS = open(os.path.join(B, 'lab.js'), encoding='utf-8').read() + '\n' + '\n'.join(open(os.path.join(B, f), encoding='utf-8').read() for f in ('sims_core.js', 'sims_a.js', 'sims_b.js')) + '\n' + open(os.path.join(B, 'dash.js'), encoding='utf-8').read()
+JS = open(os.path.join(B, 'lab.js'), encoding='utf-8').read() + '\n' + '\n'.join(open(os.path.join(B, f), encoding='utf-8').read() for f in ('sims_core.js', 'sims_a.js', 'sims_b.js', 'sims_c.js')) + '\n' + open(os.path.join(B, 'dash.js'), encoding='utf-8').read()
 NAMES = {'doc': '박사', 'asst': '조수(하루)', 'fly': '초파리 연구원', 'robo': '주판봇', 'sia': '시아(인턴)', 'moa': '모아(인턴)', 'x1': 'X1', 'x2': 'X2', 'x3': 'X3'}
 DEFM = {'doc': 'front', 'asst': 'smile', 'fly': 'clip', 'robo': 'smile', 'sia': 'start', 'moa': 'judge', 'x1': 'watch', 'x2': 'watch', 'x3': 'watch'}
 e = html.escape
@@ -165,13 +165,15 @@ def kg_build(P):
     edge(lv[0], 'raises', cq, '#hero', 'mid')
     nq = node(f'lab:question/{num}-next', 'Question', P.get('next_q', '다음 회차에서 이어집니다'), 'open question after ' + num, '#sum', P.get('next_q', ''))
     edge(f'lab:limitation/{num}-{L[-1]["id"]}', 'raises', nq, '#sum', 'mid')
-    D = P['duel']
-    dq = node(f'lab:question/{num}-duel', 'Question', D['question'], 'duel question ' + num, '#duel', D['question'])
-    mf = node(f'lab:method/{num}-duel-fly', 'Method', D['fly_choice'], 'duel choice A ' + num, '#duel', D['fly_choice'])
-    mr = node(f'lab:method/{num}-duel-robo', 'Method', D['robo_choice'], 'duel choice B ' + num, '#duel', D['robo_choice'])
-    mt = node(f'lab:metric/{num}-duel', 'Metric', D['metric'], 'duel metric ' + num, '#duel', D['metric'])
-    edge(mf, 'contrastsWith', mr, '#duel'); edge(mf, 'evaluatedBy', mt, '#duel'); edge(mr, 'evaluatedBy', mt, '#duel')
-    edge(lv[D.get('lv', len(lv) - 1)], 'raises', dq, '#duel', 'mid'); edge(dq, 'relatedTo', mf, '#duel', 'mid')
+    D = P.get('duel')
+    if not D: D = None
+    if D:
+      dq = node(f'lab:question/{num}-duel', 'Question', D['question'], 'duel question ' + num, '#duel', D['question'])
+      mf = node(f'lab:method/{num}-duel-fly', 'Method', D['fly_choice'], 'duel choice A ' + num, '#duel', D['fly_choice'])
+      mr = node(f'lab:method/{num}-duel-robo', 'Method', D['robo_choice'], 'duel choice B ' + num, '#duel', D['robo_choice'])
+      mt = node(f'lab:metric/{num}-duel', 'Metric', D['metric'], 'duel metric ' + num, '#duel', D['metric'])
+      edge(mf, 'contrastsWith', mr, '#duel'); edge(mf, 'evaluatedBy', mt, '#duel'); edge(mr, 'evaluatedBy', mt, '#duel')
+      edge(lv[D.get('lv', len(lv) - 1)], 'raises', dq, '#duel', 'mid'); edge(dq, 'relatedTo', mf, '#duel', 'mid')
     for t, g in P['gloss'].items():
         if len(g) < 5: continue
         tid = node(g[4], 'Term' if g[1] in ('기호', '용어', '약어') else 'Concept', t, g[3], f'#{L[g[5]]["id"]}' if len(g) > 5 else '#hero', g[2], family=fam)
@@ -331,10 +333,10 @@ def page(P):
     apply_plainer(P)
     M = Moods(); L = P['levels']; num = P['num']
     for k, v in DEFM.items(): M.add(k, v)
-    P['duels_js'] = [{'el': '#duelBox', 'fn': P['duel']['fn'], 'cfg': P['duel'].get('cfg', {}), 'metric': P['duel']['metric'], 'lesson': P['duel']['lesson'], 'condLesson': P['duel'].get('cond_lesson', ''), 'higherIsBetter': P['duel']['hib'], 'drawMargin': P['duel'].get('margin', 0), 'fmt': P['duel'].get('fmt', ''), 'unit': P['duel'].get('unit', ''), 'dec': P['duel'].get('dec', 1)}]
+    P['duels_js'] = [] if not P.get('duel') else [{'el': '#duelBox', 'fn': P['duel']['fn'], 'cfg': P['duel'].get('cfg', {}), 'metric': P['duel']['metric'], 'lesson': P['duel']['lesson'], 'condLesson': P['duel'].get('cond_lesson', ''), 'higherIsBetter': P['duel']['hib'], 'drawMargin': P['duel'].get('margin', 0), 'fmt': P['duel'].get('fmt', ''), 'unit': P['duel'].get('unit', ''), 'dec': P['duel'].get('dec', 1)}]
     P['flow'] = []
     for l in L: P['flow'] += [[l['node'][2], 0], [l['limit_short'], 1]]
-    links = [('three', '3줄 요약'), ('cast', '연구실 식구')] + [(l['id'], f'{i+1} {l["short"]}') for i, l in enumerate(L)] + [('dash', '대시보드'), ('duel', '대결'), ('sum', '정리'), ('kg', '색인'), ('export', '꾸러미')]
+    links = [('three', '3줄 요약'), ('cast', '연구실 식구')] + [(l['id'], f'{i+1} {l["short"]}') for i, l in enumerate(L)] + ([('dash', '대시보드')] if P.get('dash') else []) + ([('duel', '대결')] if P.get('duel') else []) + [('sum', '정리'), ('kg', '색인'), ('export', '꾸러미')]
     o = [head(P, P['title'], P['desc'], P['file']), nav(links, f'{SERIES_SHORT} {num}'), tower.tower_html(num), cover(P, M, f'cover_{num}')]
     kp = ''.join(f'<div class="kpi {c}"><b>{v}</b><span>{t}</span></div>' for v, t, c in P['kpis'])
     hero_talk = ''.join(say(*t, M) for t in P['hero_talk'])
@@ -348,13 +350,14 @@ def page(P):
     o.append('<section class="level" id="why"><div class="wrap stack"><div class="lvhead"><h2>왜 이 주제인가</h2></div><div class="steps">' + ''.join(f'<div><b>{a}</b><p>{b}</p></div>' for a, b in W) + '</div>'
              + '<details class="more"><summary>큰 그림 — 이 회차가 흘러가는 4단계 (펼쳐 보기)</summary>' + (f'<p class="lead">{P["big_lead"]}</p>' if P.get('big_lead') else '') + '<div class="steps four">' + ''.join(f'<div><b>{a}</b><p>{b}</p></div>' for a, b in Bg) + '</div></details></div></section>')
     for i, l in enumerate(L): o.append(level_html(l, i, M, P))
-    o.append(f'<section class="level" id="dash"><div class="wrap stack"><div class="lvhead"><h2>한눈에 보는 대시보드</h2><p class="lead">칸 ①②③에서 본 것을 한 화면에 모았어요. ▶ 재생을 누르면 숫자 카드와 그림이 함께 바뀝니다. 처음 값은 본문 예시와 같아요.</p></div><div class="dash panel" data-dash="{num}"></div></div></section>')
-    o.append(duel_html(P, M))
+    if P.get('dash'):
+        o.append(f'<section class="level" id="dash"><div class="wrap stack"><div class="lvhead"><h2>한눈에 보는 대시보드</h2><p class="lead">칸 ①②③에서 본 것을 한 화면에 모았어요. ▶ 재생을 누르면 숫자 카드와 그림이 함께 바뀝니다. 처음 값은 본문 예시와 같아요.</p></div><div class="dash panel" data-dash="{P['dash']}"></div></div></section>')
+    if P.get('duel'): o.append(duel_html(P, M))
     S = P['summary']
     rows = ''.join(f'<tr><td>{a}</td><td>{b}</td><td>{c}</td></tr>' for a, b, c in S['table'])
     terms = ''.join(f'<div><b>{a}</b><p>{b}</p></div>' for a, b in S['terms'])
     lims = ''.join(f'<li>{x}</li>' for x in S['analogy_limits'])
-    o.append(f'''<section class="level" id="sum"><div class="wrap stack"><div class="lvhead"><h2>정리</h2></div><div class="tw"><table class="tb"><tr><th>칸</th><th>새로 생긴 능력</th><th>남은 한계</th></tr>{rows}</table></div><div class="steps">{terms}</div><div class="explain"><h4>비유의 한계</h4><ul>{lims}</ul></div>{say("doc","magic",S["doc_line"],M)}</div></section>''')
+    o.append(f'''<section class="level" id="sum"><div class="wrap stack"><div class="lvhead"><h2>정리</h2></div><div class="tw"><table class="tb"><tr><th>칸</th><th>새로 생긴 능력</th><th>남은 한계</th></tr>{rows}</table></div><div class="steps">{terms}</div>{('<div class="explain"><h4>비유의 한계</h4><ul>' + lims + '</ul></div>') if lims else ''}{say("doc","magic",S["doc_line"],M)}</div></section>''')
     o.append('<section class="level" id="outro"><div class="wrap stack"><div class="lvhead"><h2>아웃트로</h2></div>' + ''.join(say(*t, M) for t in P['outro']) + '</div></section>')
     o.append(KG_SEC); o.append(export_sec(M)); o.append(footer(P))
     G = kg_build(P)

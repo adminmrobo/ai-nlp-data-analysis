@@ -25,7 +25,7 @@ async function build() {
   const { OrbitControls } = await import('three/addons/controls/OrbitControls.js');
   const W = 8, DP = 5, PULL = DP + 2.6;
   const FL = TD.floors;
-  const FH = k => k === '00' ? 1.7 : k === '05' ? 0.8 : k === '10' ? 0.55 : 1.15;
+  const FH = k => k === '00' ? 1.7 : k === '5' ? 0.8 : k === '10' ? 0.55 : 1.15;
   let y = 0; FL.forEach(f => { f.y = y; f.h = FH(f.key); y += f.h; });
   const TOP = y;
   const cur = FL.find(f => f.key === TD.cur);
@@ -106,9 +106,9 @@ async function build() {
       const sl = box(0.08, 0.7, 0.08, pm); sl.position.set(-2.8, 0.45, -DP / 2 + 0.25); g.add(sl);
       const sr = sl.clone(); sr.position.x = 0; g.add(sr); o.deco.push(sl, sr);
     } else {
-      const inset = f.key === '05' ? 0.7 : 0;
+      const inset = f.key === '5' ? 0.7 : 0;
       const gh = f.h - 0.12;
-      const glass = box(W - inset, gh, DP - inset, f.key === '05' ? glassG.clone() : glassM.clone());
+      const glass = box(W - inset, gh, DP - inset, f.key === '5' ? glassG.clone() : glassM.clone());
       glass.position.y = 0.12 + gh / 2; g.add(glass); o.glass = glass;
       const edges = new THREE.LineSegments(new THREE.EdgesGeometry(glass.geometry), mullM); edges.position.copy(glass.position); g.add(edges);
       // 세로 창살
@@ -117,7 +117,7 @@ async function build() {
       for (let z = -hd + 1; z < hd - 0.01; z += 1) { pts.push(hw + 0.001, 0.12, z, hw + 0.001, 0.12 + gh, z, -hw - 0.001, 0.12, z, -hw - 0.001, 0.12 + gh, z); }
       const mg = new THREE.BufferGeometry(); mg.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
       g.add(new THREE.LineSegments(mg, mullM));
-      if (f.key === '05') { [[-3.6, 2.2], [3.6, 2.2], [-3.6, -2.2], [3.6, -2.2]].forEach(([x, z]) => { const t = new THREE.Mesh(new THREE.SphereGeometry(0.28, 10, 8), treeM); t.position.set(x, 0.42, z); g.add(t); }); }
+      if (f.key === '5') { [[-3.6, 2.2], [3.6, 2.2], [-3.6, -2.2], [3.6, -2.2]].forEach(([x, z]) => { const t = new THREE.Mesh(new THREE.SphereGeometry(0.28, 10, 8), treeM); t.position.set(x, 0.42, z); g.add(t); }); }
       if (f.key === '00') {
         const can = box(3.6, 0.1, 1.6, M(0xdfe5ee)); can.position.set(0, 1.25, DP / 2 + 0.8); g.add(can);
         [-1.6, 1.6].forEach(x => { const p = box(0.1, 1.2, 0.1, M(0xb8c2d3)); p.position.set(x, 0.62, DP / 2 + 1.5); g.add(p); });
@@ -350,7 +350,7 @@ async function build() {
       plan.visible = pull > 0.55;
       if (o.glass) { o.glass.visible = pull < 0.35; }
       if (o.deco) o.deco.forEach(m => { m.visible = pull < 0.35; });
-      FL.forEach(f => { const g = floorObj[f.key].glass; if (g && f.key !== cur.key) g.material.opacity = (f.key === '05' ? 0.42 : 0.38) * (1 - 0.45 * pull); });
+      FL.forEach(f => { const g = floorObj[f.key].glass; if (g && f.key !== cur.key) g.material.opacity = (f.key === '5' ? 0.42 : 0.38) * (1 - 0.45 * pull); });
     }
     // 강조
     FL.forEach(f => {

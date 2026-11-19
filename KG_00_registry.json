@@ -2,9 +2,121 @@
  "version": "1.0",
  "date": "2026-11-20",
  "ids": {
+  "lab:concept/judgment-recognition": {
+   "ko": "판단과 인식",
+   "en": "judgment and recognition",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
   "lab:method/rule-vs-ml": {
    "ko": "규칙 기반과 머신러닝",
    "en": "rule-based approach vs machine learning",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/dl-nlp-overview": {
+   "ko": "딥러닝 기반 자연어 분석",
+   "en": "deep-learning-based natural language analysis",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/1-1-duel-fly": {
+   "ko": "전문가 규칙(월소득 300만 원 이상 · 카드지출 60% 이하)",
+   "en": "duel choice A 1-1",
+   "page": "01-1_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/1-1-duel-robo": {
+   "ko": "지난 기록에서 찾은 기준",
+   "en": "duel choice B 1-1",
+   "page": "01-1_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/judgment": {
+   "ko": "판단",
+   "en": "judgment",
+   "page": "01-1_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/recognition": {
+   "ko": "인식",
+   "en": "recognition",
+   "page": "01-1_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/algorithm": {
+   "ko": "알고리즘",
+   "en": "algorithm",
+   "page": "01-1_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/artificial-intelligence": {
+   "ko": "인공지능",
+   "en": "artificial intelligence",
+   "page": "01-1_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/rule-based": {
+   "ko": "규칙 기반",
+   "en": "rule-based system",
+   "page": "01-1_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/machine-learning": {
+   "ko": "머신러닝",
+   "en": "machine learning",
+   "page": "01-1_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/deep-learning": {
+   "ko": "딥러닝",
+   "en": "deep learning",
+   "page": "01-1_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/sentiment-analysis": {
+   "ko": "감성 분석",
+   "en": "sentiment analysis",
+   "page": "01-1_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/neutral": {
+   "ko": "중립",
+   "en": "neutral",
+   "page": "01-1_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/structured-vs-unstructured": {
+   "ko": "정형 데이터와 비정형 데이터",
+   "en": "structured vs unstructured data",
    "page": "05_midterm_review",
    "domain": [
     "ai-nlp"
@@ -18,6 +130,78 @@
     "ai-nlp"
    ]
   },
+  "lab:concept/language-variety-change": {
+   "ko": "언어의 다양성과 변화",
+   "en": "linguistic diversity and language change",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/structured-data": {
+   "ko": "정형 데이터",
+   "en": "structured data",
+   "page": "01-2_nl_data_features",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/unstructured-data": {
+   "ko": "비정형 데이터",
+   "en": "unstructured data",
+   "page": "01-2_nl_data_features",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/sql": {
+   "ko": "SQL",
+   "en": "SQL",
+   "page": "01-2_nl_data_features",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/morpheme": {
+   "ko": "형태소",
+   "en": "morpheme",
+   "page": "01-2_nl_data_features",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/ambiguity": {
+   "ko": "중의성",
+   "en": "ambiguity",
+   "page": "01-2_nl_data_features",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/word-cloud": {
+   "ko": "워드 클라우드",
+   "en": "word cloud",
+   "page": "01-2_nl_data_features",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/frequency": {
+   "ko": "빈도",
+   "en": "frequency",
+   "page": "01-2_nl_data_features",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/news-opinion-analysis": {
+   "ko": "뉴스·여론 분석",
+   "en": "news and public opinion analysis",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
   "lab:method/lexicon-sentiment": {
    "ko": "감성 사전 기반 감성 분석",
    "en": "lexicon-based sentiment analysis",
@@ -26,82 +210,26 @@
     "ai-nlp"
    ]
   },
-  "lab:method/01-duel-fly": {
-   "ko": "전문가 규칙(월소득 300만 원 이상 · 카드지출 60% 이하)",
-   "en": "duel choice A 01",
-   "page": "01_ai_and_nlp_data",
+  "lab:concept/llm-at-work": {
+   "ko": "업무 속 대규모 언어모델",
+   "en": "large language models at work",
+   "page": "05_midterm_review",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:method/01-duel-robo": {
-   "ko": "지난 기록에서 찾은 기준",
-   "en": "duel choice B 01",
-   "page": "01_ai_and_nlp_data",
+  "lab:term/opinion-analysis": {
+   "ko": "여론 분석",
+   "en": "public opinion analysis",
+   "page": "01-3_business_cases",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:concept/artificial-intelligence": {
-   "ko": "인공지능",
-   "en": "artificial intelligence",
-   "page": "01_ai_and_nlp_data",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/rule-based": {
-   "ko": "규칙 기반",
-   "en": "rule-based system",
-   "page": "01_ai_and_nlp_data",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/machine-learning": {
-   "ko": "머신러닝",
-   "en": "machine learning",
-   "page": "01_ai_and_nlp_data",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/deep-learning": {
-   "ko": "딥러닝",
-   "en": "deep learning",
-   "page": "01_ai_and_nlp_data",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:concept/structured-data": {
-   "ko": "정형 데이터",
-   "en": "structured data",
-   "page": "01_ai_and_nlp_data",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:concept/unstructured-data": {
-   "ko": "비정형 데이터",
-   "en": "unstructured data",
-   "page": "01_ai_and_nlp_data",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:term/morpheme": {
-   "ko": "형태소",
-   "en": "morpheme",
-   "page": "01_ai_and_nlp_data",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:term/ambiguity": {
-   "ko": "중의성",
-   "en": "ambiguity",
-   "page": "01_ai_and_nlp_data",
+  "lab:term/trend": {
+   "ko": "트렌드",
+   "en": "trend",
+   "page": "01-3_business_cases",
    "domain": [
     "ai-nlp"
    ]
@@ -109,7 +237,7 @@
   "lab:method/sentiment-analysis": {
    "ko": "감성 분석",
    "en": "sentiment analysis",
-   "page": "01_ai_and_nlp_data",
+   "page": "01-3_business_cases",
    "domain": [
     "ai-nlp"
    ]
@@ -117,7 +245,7 @@
   "lab:term/voc": {
    "ko": "VOC",
    "en": "voice of customer",
-   "page": "01_ai_and_nlp_data",
+   "page": "01-3_business_cases",
    "domain": [
     "ai-nlp"
    ]
@@ -125,15 +253,23 @@
   "lab:term/hallucination": {
    "ko": "할루시네이션",
    "en": "hallucination",
-   "page": "01_ai_and_nlp_data",
+   "page": "01-3_business_cases",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:concept/llm": {
+  "lab:term/llm": {
    "ko": "LLM",
    "en": "large language model",
-   "page": "09_modern_llm",
+   "page": "01-3_business_cases",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/machine-translation": {
+   "ko": "기계 번역",
+   "en": "machine translation",
+   "page": "01-3_business_cases",
    "domain": [
     "ai-nlp"
    ]
@@ -141,6 +277,14 @@
   "lab:method/data-collection": {
    "ko": "자연어 데이터 수집",
    "en": "text data collection",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/data-validation": {
+   "ko": "데이터 검증",
+   "en": "data validation",
    "page": "05_midterm_review",
    "domain": [
     "ai-nlp"
@@ -154,26 +298,18 @@
     "ai-nlp"
    ]
   },
-  "lab:concept/language-model": {
-   "ko": "언어 모델",
-   "en": "language model",
-   "page": "05_midterm_review",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/02-duel-fly": {
+  "lab:method/2-1-duel-fly": {
    "ko": "검증·정제·불용어 제거 후 세기",
-   "en": "duel choice A 02",
-   "page": "02_nlp_process_tools",
+   "en": "duel choice A 2-1",
+   "page": "02-1_analysis_process",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:method/02-duel-robo": {
+  "lab:method/2-1-duel-robo": {
    "ko": "원본 그대로 세기",
-   "en": "duel choice B 02",
-   "page": "02_nlp_process_tools",
+   "en": "duel choice B 2-1",
+   "page": "02-1_analysis_process",
    "domain": [
     "ai-nlp"
    ]
@@ -181,7 +317,7 @@
   "lab:term/api": {
    "ko": "API",
    "en": "application programming interface",
-   "page": "02_nlp_process_tools",
+   "page": "02-1_analysis_process",
    "domain": [
     "ai-nlp"
    ]
@@ -189,7 +325,7 @@
   "lab:method/crawling": {
    "ko": "크롤링",
    "en": "web crawling",
-   "page": "02_nlp_process_tools",
+   "page": "02-1_analysis_process",
    "domain": [
     "ai-nlp"
    ]
@@ -197,7 +333,7 @@
   "lab:method/scraping": {
    "ko": "스크래핑",
    "en": "web scraping",
-   "page": "02_nlp_process_tools",
+   "page": "02-1_analysis_process",
    "domain": [
     "ai-nlp"
    ]
@@ -205,7 +341,31 @@
   "lab:term/robots-txt": {
    "ko": "robots.txt",
    "en": "robots exclusion file",
-   "page": "02_nlp_process_tools",
+   "page": "02-1_analysis_process",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/data-validation": {
+   "ko": "데이터 검증",
+   "en": "data validation",
+   "page": "02-1_analysis_process",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/missing": {
+   "ko": "결측",
+   "en": "missing value",
+   "page": "02-1_analysis_process",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/sampling-check": {
+   "ko": "샘플링 검수",
+   "en": "sampling inspection",
+   "page": "02-1_analysis_process",
    "domain": [
     "ai-nlp"
    ]
@@ -213,7 +373,7 @@
   "lab:method/preprocessing": {
    "ko": "전처리",
    "en": "preprocessing",
-   "page": "02_nlp_process_tools",
+   "page": "02-1_analysis_process",
    "domain": [
     "ai-nlp"
    ]
@@ -229,7 +389,7 @@
   "lab:method/normalization": {
    "ko": "정규화",
    "en": "normalization",
-   "page": "02_nlp_process_tools",
+   "page": "02-1_analysis_process",
    "domain": [
     "ai-nlp"
    ]
@@ -237,15 +397,151 @@
   "lab:term/stop-words": {
    "ko": "불용어",
    "en": "stop words",
-   "page": "03_morpheme_corpus",
+   "page": "03-1_morpheme_overview",
    "domain": [
     "ai-nlp"
    ]
   },
   "lab:term/jupyter": {
-   "ko": "주피터 노트북",
+   "ko": "Jupyter Notebook",
    "en": "Jupyter Notebook",
-   "page": "02_nlp_process_tools",
+   "page": "02-2_tools_environment",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/python-nlp-libraries": {
+   "ko": "파이썬 자연어 처리 라이브러리",
+   "en": "Python NLP libraries",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/r-text-packages": {
+   "ko": "R 텍스트 분석 패키지",
+   "en": "R text analysis packages",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/ide-bi-tools": {
+   "ko": "개발 환경과 시각화 도구",
+   "en": "IDEs and BI visualization tools",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/library": {
+   "ko": "라이브러리",
+   "en": "library",
+   "page": "02-2_tools_environment",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/nltk": {
+   "ko": "NLTK",
+   "en": "NLTK",
+   "page": "02-2_tools_environment",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/spacy": {
+   "ko": "spaCy",
+   "en": "spaCy",
+   "page": "02-2_tools_environment",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/sklearn": {
+   "ko": "scikit-learn",
+   "en": "scikit-learn",
+   "page": "02-2_tools_environment",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/r-lang": {
+   "ko": "R",
+   "en": "R language",
+   "page": "02-2_tools_environment",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/rmarkdown": {
+   "ko": "R Markdown",
+   "en": "R Markdown",
+   "page": "02-2_tools_environment",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/dtm": {
+   "ko": "DTM",
+   "en": "document-term matrix",
+   "page": "02-2_tools_environment",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/ide": {
+   "ko": "IDE",
+   "en": "integrated development environment",
+   "page": "02-2_tools_environment",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/bi-tool": {
+   "ko": "BI 도구",
+   "en": "business intelligence tool",
+   "page": "02-2_tools_environment",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/nlp-evolution": {
+   "ko": "자연어 처리 모델의 발전",
+   "en": "evolution of NLP models",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/language-model": {
+   "ko": "언어 모델",
+   "en": "language model",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/statistical-vs-neural-lm": {
+   "ko": "통계 기반과 딥러닝 기반 언어 모델",
+   "en": "statistical vs neural language models",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/nlp": {
+   "ko": "자연어 처리",
+   "en": "natural language processing",
+   "page": "02-3_models_methods",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/transformer": {
+   "ko": "트랜스포머",
+   "en": "Transformer",
+   "page": "02-3_models_methods",
    "domain": [
     "ai-nlp"
    ]
@@ -253,7 +549,7 @@
   "lab:method/ngram": {
    "ko": "N-gram",
    "en": "n-gram model",
-   "page": "02_nlp_process_tools",
+   "page": "02-3_models_methods",
    "domain": [
     "ai-nlp"
    ]
@@ -261,7 +557,31 @@
   "lab:method/smoothing": {
    "ko": "평활",
    "en": "smoothing",
-   "page": "02_nlp_process_tools",
+   "page": "02-3_models_methods",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/sparsity": {
+   "ko": "희소성",
+   "en": "sparsity",
+   "page": "02-3_models_methods",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/hmm": {
+   "ko": "HMM",
+   "en": "hidden Markov model",
+   "page": "02-3_models_methods",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/nlp-disciplines": {
+   "ko": "자연어 처리의 학문적 바탕",
+   "en": "disciplinary foundations of NLP",
+   "page": "05_midterm_review",
    "domain": [
     "ai-nlp"
    ]
@@ -269,6 +589,158 @@
   "lab:method/stopword-removal": {
    "ko": "불용어 제거와 원형 찾기",
    "en": "stop-word removal and stemming/lemmatization",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/natural-language": {
+   "ko": "자연어",
+   "en": "natural language",
+   "page": "03-1_morpheme_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/semantics": {
+   "ko": "의미론",
+   "en": "semantics",
+   "page": "03-1_morpheme_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/pragmatics": {
+   "ko": "화용론",
+   "en": "pragmatics",
+   "page": "03-1_morpheme_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/token": {
+   "ko": "토큰",
+   "en": "token",
+   "page": "03-1_morpheme_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/eojeol": {
+   "ko": "어절",
+   "en": "eojeol (space-delimited unit)",
+   "page": "03-1_morpheme_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/agglutinative": {
+   "ko": "교착어",
+   "en": "agglutinative language",
+   "page": "03-3_korean_konlpy",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/pos-tagging": {
+   "ko": "품사 태깅",
+   "en": "part-of-speech tagging",
+   "page": "03-1_morpheme_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/stemming": {
+   "ko": "어간 추출",
+   "en": "stemming",
+   "page": "03-1_morpheme_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/lemmatization": {
+   "ko": "표제어 추출",
+   "en": "lemmatization",
+   "page": "03-1_morpheme_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/nltk-toolkit": {
+   "ko": "NLTK",
+   "en": "Natural Language Toolkit",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/english-preprocessing": {
+   "ko": "영어 텍스트 전처리",
+   "en": "English text preprocessing",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/pos-tagging-frequency": {
+   "ko": "품사 태깅과 빈도 분석",
+   "en": "part-of-speech tagging and frequency analysis",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/wordnet": {
+   "ko": "워드넷",
+   "en": "WordNet",
+   "page": "03-2_english_nltk",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/parsing": {
+   "ko": "구문 분석",
+   "en": "parsing",
+   "page": "03-2_english_nltk",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/punctuation": {
+   "ko": "구두점",
+   "en": "punctuation",
+   "page": "03-2_english_nltk",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/sent-tokenize": {
+   "ko": "문장 토큰화",
+   "en": "sentence tokenization",
+   "page": "03-2_english_nltk",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/pos-tagging": {
+   "ko": "품사 태깅",
+   "en": "part-of-speech tagging",
+   "page": "03-2_english_nltk",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/korean-agglutinative": {
+   "ko": "한국어의 교착어적 특성",
+   "en": "agglutinative features of Korean",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/korean-morph-analyzers": {
+   "ko": "한국어 형태소 분석기",
+   "en": "Korean morphological analyzers",
    "page": "05_midterm_review",
    "domain": [
     "ai-nlp"
@@ -282,66 +754,34 @@
     "ai-nlp"
    ]
   },
-  "lab:method/03-duel-fly": {
+  "lab:method/3-3-duel-fly": {
    "ko": "띄어쓰기(공백) 기준으로 자르기",
-   "en": "duel choice A 03",
-   "page": "03_morpheme_corpus",
+   "en": "duel choice A 3-3",
+   "page": "03-3_korean_konlpy",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:method/03-duel-robo": {
+  "lab:method/3-3-duel-robo": {
    "ko": "형태소 분석으로 자르기",
-   "en": "duel choice B 03",
-   "page": "03_morpheme_corpus",
+   "en": "duel choice B 3-3",
+   "page": "03-3_korean_konlpy",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:term/token": {
-   "ko": "토큰",
-   "en": "token",
-   "page": "03_morpheme_corpus",
+  "lab:term/josa": {
+   "ko": "조사",
+   "en": "postposition (josa)",
+   "page": "03-3_korean_konlpy",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:term/eojeol": {
-   "ko": "어절",
-   "en": "eojeol (space-delimited unit)",
-   "page": "03_morpheme_corpus",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:term/agglutinative": {
-   "ko": "교착어",
-   "en": "agglutinative language",
-   "page": "03_morpheme_corpus",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/pos-tagging": {
-   "ko": "품사 태깅",
-   "en": "part-of-speech tagging",
-   "page": "03_morpheme_corpus",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/stemming": {
-   "ko": "어간 추출",
-   "en": "stemming",
-   "page": "03_morpheme_corpus",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/lemmatization": {
-   "ko": "표제어 추출",
-   "en": "lemmatization",
-   "page": "03_morpheme_corpus",
+  "lab:term/eomi": {
+   "ko": "어미",
+   "en": "ending (eomi)",
+   "page": "03-3_korean_konlpy",
    "domain": [
     "ai-nlp"
    ]
@@ -349,7 +789,15 @@
   "lab:term/konlpy": {
    "ko": "KoNLPy",
    "en": "KoNLPy",
-   "page": "03_morpheme_corpus",
+   "page": "03-3_korean_konlpy",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/morph-analyzer": {
+   "ko": "형태소 분석기",
+   "en": "morphological analyzer",
+   "page": "03-3_korean_konlpy",
    "domain": [
     "ai-nlp"
    ]
@@ -357,7 +805,7 @@
   "lab:term/corpus": {
    "ko": "말뭉치",
    "en": "corpus",
-   "page": "03_morpheme_corpus",
+   "page": "03-3_korean_konlpy",
    "domain": [
     "ai-nlp"
    ]
@@ -365,15 +813,15 @@
   "lab:term/user-dictionary": {
    "ko": "사용자 사전",
    "en": "user dictionary",
-   "page": "03_morpheme_corpus",
+   "page": "03-3_korean_konlpy",
    "domain": [
     "ai-nlp"
    ]
   },
   "lab:term/oov": {
-   "ko": "미등록어",
-   "en": "out-of-vocabulary word",
-   "page": "03_morpheme_corpus",
+   "ko": "OOV",
+   "en": "out-of-vocabulary",
+   "page": "04-2_tf_idf",
    "domain": [
     "ai-nlp"
    ]
@@ -381,6 +829,94 @@
   "lab:concept/word-embedding": {
    "ko": "워드 임베딩",
    "en": "word embedding",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/sparse-vs-dense": {
+   "ko": "희소 표현과 밀집 표현",
+   "en": "sparse vs dense word representations",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/embedding-pipeline": {
+   "ko": "워드 임베딩 구축 절차",
+   "en": "word embedding pipeline",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/one-hot": {
+   "ko": "원핫 인코딩",
+   "en": "one-hot encoding",
+   "page": "04-1_embedding_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/word-vector": {
+   "ko": "워드 벡터",
+   "en": "word vector",
+   "page": "04-1_embedding_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/sparse-vector": {
+   "ko": "희소 벡터",
+   "en": "sparse vector",
+   "page": "04-1_embedding_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/dense": {
+   "ko": "밀집 표현",
+   "en": "dense representation",
+   "page": "04-1_embedding_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/dense-vector": {
+   "ko": "밀집 벡터",
+   "en": "dense vector",
+   "page": "04-1_embedding_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/vocabulary": {
+   "ko": "어휘집",
+   "en": "vocabulary",
+   "page": "04-1_embedding_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/unk": {
+   "ko": "UNK",
+   "en": "unknown token",
+   "page": "04-1_embedding_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/hyperparameter": {
+   "ko": "하이퍼파라미터",
+   "en": "hyperparameter",
+   "page": "04-1_embedding_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/frequency-analysis": {
+   "ko": "빈도 분석",
+   "en": "term frequency analysis",
    "page": "05_midterm_review",
    "domain": [
     "ai-nlp"
@@ -394,6 +930,86 @@
     "ai-nlp"
    ]
   },
+  "lab:method/tfidf-weighting-variants": {
+   "ko": "TF-IDF 가중치 조정",
+   "en": "TF-IDF weighting variants",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/4-2-duel-fly": {
+   "ko": "TF-IDF 1위 단어",
+   "en": "duel choice A 4-2",
+   "page": "04-2_tf_idf",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/4-2-duel-robo": {
+   "ko": "가장 많이 나온 단어",
+   "en": "duel choice B 4-2",
+   "page": "04-2_tf_idf",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/normalized-frequency": {
+   "ko": "정규화 빈도",
+   "en": "normalized frequency",
+   "page": "04-2_tf_idf",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/binary-frequency": {
+   "ko": "이진 빈도",
+   "en": "binary frequency",
+   "page": "04-2_tf_idf",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/tf": {
+   "ko": "TF",
+   "en": "term frequency",
+   "page": "04-2_tf_idf",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/idf": {
+   "ko": "IDF",
+   "en": "inverse document frequency",
+   "page": "04-2_tf_idf",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/log-scaling": {
+   "ko": "로그 스케일링",
+   "en": "log scaling",
+   "page": "04-2_tf_idf",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/smoothing": {
+   "ko": "스무딩",
+   "en": "smoothing",
+   "page": "04-2_tf_idf",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/embedding-history": {
+   "ko": "워드 임베딩의 발전",
+   "en": "history of word embeddings",
+   "page": "05_midterm_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
   "lab:method/lda": {
    "ko": "LDA 토픽 모델",
    "en": "latent Dirichlet allocation",
@@ -402,66 +1018,26 @@
     "ai-nlp"
    ]
   },
-  "lab:method/04-duel-fly": {
-   "ko": "TF-IDF 1위 단어",
-   "en": "duel choice A 04",
-   "page": "04_word_embedding",
+  "lab:method/lda-interpretation": {
+   "ko": "LDA 결과 해석",
+   "en": "interpreting LDA results",
+   "page": "05_midterm_review",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:method/04-duel-robo": {
-   "ko": "가장 많이 나온 단어",
-   "en": "duel choice B 04",
-   "page": "04_word_embedding",
+  "lab:term/lsa": {
+   "ko": "LSA",
+   "en": "latent semantic analysis",
+   "page": "04-3_topic_lda",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:method/one-hot": {
-   "ko": "원핫 인코딩",
-   "en": "one-hot encoding",
-   "page": "04_word_embedding",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:concept/word-vector": {
-   "ko": "워드 벡터",
-   "en": "word vector",
-   "page": "04_word_embedding",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:term/sparse-vector": {
-   "ko": "희소 벡터",
-   "en": "sparse vector",
-   "page": "04_word_embedding",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:term/dense": {
-   "ko": "밀집 표현",
-   "en": "dense representation",
-   "page": "04_word_embedding",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:term/tf": {
-   "ko": "TF",
-   "en": "term frequency",
-   "page": "04_word_embedding",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:term/idf": {
-   "ko": "IDF",
-   "en": "inverse document frequency",
-   "page": "04_word_embedding",
+  "lab:term/contextual-embedding": {
+   "ko": "문맥화 임베딩",
+   "en": "contextualized embedding",
+   "page": "04-3_topic_lda",
    "domain": [
     "ai-nlp"
    ]
@@ -469,7 +1045,7 @@
   "lab:method/topic-modeling": {
    "ko": "토픽 모델링",
    "en": "topic modeling",
-   "page": "04_word_embedding",
+   "page": "04-3_topic_lda",
    "domain": [
     "ai-nlp"
    ]
@@ -477,7 +1053,23 @@
   "lab:concept/dirichlet": {
    "ko": "디리클레 분포",
    "en": "Dirichlet distribution",
-   "page": "04_word_embedding",
+   "page": "04-3_topic_lda",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/intertopic-map": {
+   "ko": "주제 간 거리 지도",
+   "en": "intertopic distance map",
+   "page": "04-3_topic_lda",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/relevance-lambda": {
+   "ko": "관련성 λ",
+   "en": "relevance lambda",
+   "page": "04-3_topic_lda",
    "domain": [
     "ai-nlp"
    ]
@@ -485,6 +1077,14 @@
   "lab:method/word2vec": {
    "ko": "Word2Vec",
    "en": "Word2Vec",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/w2v-training-tricks": {
+   "ko": "Word2Vec 학습 효율화",
+   "en": "Word2Vec training efficiency techniques",
    "page": "10_final_review",
    "domain": [
     "ai-nlp"
@@ -498,6 +1098,158 @@
     "ai-nlp"
    ]
   },
+  "lab:concept/distributional-hypothesis": {
+   "ko": "분포 가설",
+   "en": "distributional hypothesis",
+   "page": "06-1_word2vec_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/cbow": {
+   "ko": "CBOW",
+   "en": "continuous bag of words",
+   "page": "06-1_word2vec_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/skip-gram": {
+   "ko": "Skip-gram",
+   "en": "skip-gram",
+   "page": "06-1_word2vec_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/negative-sampling": {
+   "ko": "네거티브 샘플링",
+   "en": "negative sampling",
+   "page": "06-1_word2vec_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/hierarchical-softmax": {
+   "ko": "계층적 소프트맥스",
+   "en": "hierarchical softmax",
+   "page": "06-1_word2vec_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/window-size": {
+   "ko": "윈도우 크기",
+   "en": "window size",
+   "page": "06-1_word2vec_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/pca": {
+   "ko": "주성분 분석",
+   "en": "principal component analysis (PCA)",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/tsne": {
+   "ko": "t-SNE",
+   "en": "t-distributed stochastic neighbor embedding (t-SNE)",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/embedding-bias": {
+   "ko": "편향",
+   "en": "bias",
+   "page": "06-1_word2vec_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/embedding-space": {
+   "ko": "단어 임베딩 공간",
+   "en": "word embedding space",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/cluster": {
+   "ko": "군집",
+   "en": "cluster",
+   "page": "06-2_vector_visualization",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/dim-reduction": {
+   "ko": "차원 축소",
+   "en": "dimensionality reduction",
+   "page": "06-2_vector_visualization",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/pca": {
+   "ko": "PCA",
+   "en": "principal component analysis",
+   "page": "06-2_vector_visualization",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/principal-component": {
+   "ko": "주성분",
+   "en": "principal component",
+   "page": "06-2_vector_visualization",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/variance": {
+   "ko": "분산",
+   "en": "variance",
+   "page": "06-2_vector_visualization",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/tsne": {
+   "ko": "t-SNE",
+   "en": "t-SNE",
+   "page": "06-2_vector_visualization",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/perplexity": {
+   "ko": "perplexity",
+   "en": "perplexity",
+   "page": "06-2_vector_visualization",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/bias": {
+   "ko": "편향",
+   "en": "bias",
+   "page": "06-2_vector_visualization",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/word-similarity-applications": {
+   "ko": "단어 유사도의 응용",
+   "en": "applications of word similarity",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
   "lab:concept/cosine-similarity": {
    "ko": "코사인 유사도",
    "en": "cosine similarity",
@@ -506,74 +1258,42 @@
     "ai-nlp"
    ]
   },
-  "lab:method/06-duel-fly": {
+  "lab:concept/other-similarity-measures": {
+   "ko": "기타 유사도 측정과 Word2Vec의 한계",
+   "en": "other similarity measures and Word2Vec limitations",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/6-3-duel-fly": {
    "ko": "키워드가 정확히 있어야 배정",
-   "en": "duel choice A 06",
-   "page": "06_word2vec",
+   "en": "duel choice A 6-3",
+   "page": "06-3_similarity",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:method/06-duel-robo": {
+  "lab:method/6-3-duel-robo": {
    "ko": "단어 벡터 평균의 코사인 유사도",
-   "en": "duel choice B 06",
-   "page": "06_word2vec",
+   "en": "duel choice B 6-3",
+   "page": "06-3_similarity",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:concept/distributional-hypothesis": {
-   "ko": "분포 가설",
-   "en": "distributional hypothesis",
-   "page": "06_word2vec",
+  "lab:term/query-expansion": {
+   "ko": "쿼리 확장",
+   "en": "query expansion",
+   "page": "06-3_similarity",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:method/cbow": {
-   "ko": "CBOW",
-   "en": "continuous bag of words",
-   "page": "06_word2vec",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/skip-gram": {
-   "ko": "Skip-gram",
-   "en": "skip-gram",
-   "page": "06_word2vec",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/negative-sampling": {
-   "ko": "네거티브 샘플링",
-   "en": "negative sampling",
-   "page": "06_word2vec",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/pca": {
-   "ko": "PCA",
-   "en": "principal component analysis",
-   "page": "06_word2vec",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/tsne": {
-   "ko": "t-SNE",
-   "en": "t-SNE",
-   "page": "06_word2vec",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:term/embedding-bias": {
-   "ko": "편향",
-   "en": "bias",
-   "page": "06_word2vec",
+  "lab:term/content-filtering": {
+   "ko": "콘텐츠 기반 필터링",
+   "en": "content-based filtering",
+   "page": "06-3_similarity",
    "domain": [
     "ai-nlp"
    ]
@@ -581,7 +1301,7 @@
   "lab:term/euclidean": {
    "ko": "유클리드 거리",
    "en": "Euclidean distance",
-   "page": "06_word2vec",
+   "page": "06-3_similarity",
    "domain": [
     "ai-nlp"
    ]
@@ -589,7 +1309,47 @@
   "lab:term/polysemy": {
    "ko": "다의어",
    "en": "polysemy",
-   "page": "06_word2vec",
+   "page": "06-3_similarity",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/jaccard": {
+   "ko": "자카드 유사도",
+   "en": "Jaccard similarity",
+   "page": "06-3_similarity",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/kl-divergence": {
+   "ko": "KL 발산",
+   "en": "Kullback-Leibler divergence",
+   "page": "06-3_similarity",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/fasttext": {
+   "ko": "FastText",
+   "en": "FastText",
+   "page": "06-3_similarity",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/classification-vs-regression": {
+   "ko": "분류와 회귀",
+   "en": "classification vs regression",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/vectorize-logistic": {
+   "ko": "텍스트 벡터화와 로지스틱 회귀",
+   "en": "text vectorization and logistic regression",
+   "page": "10_final_review",
    "domain": [
     "ai-nlp"
    ]
@@ -597,6 +1357,118 @@
   "lab:concept/classification-metrics": {
    "ko": "분류 모델의 평가 지표",
    "en": "classification evaluation metrics",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/classification": {
+   "ko": "분류",
+   "en": "classification",
+   "page": "07-1_nlp_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/regression": {
+   "ko": "회귀",
+   "en": "regression",
+   "page": "07-1_nlp_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/mae": {
+   "ko": "MAE",
+   "en": "mean absolute error",
+   "page": "07-1_nlp_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/rmse": {
+   "ko": "RMSE",
+   "en": "root mean squared error",
+   "page": "07-1_nlp_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/logistic-regression": {
+   "ko": "로지스틱 회귀",
+   "en": "logistic regression",
+   "page": "07-1_nlp_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/sigmoid": {
+   "ko": "시그모이드",
+   "en": "sigmoid function",
+   "page": "07-1_nlp_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/bow": {
+   "ko": "BoW",
+   "en": "bag of words",
+   "page": "07-1_nlp_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/classification": {
+   "ko": "분류 모델",
+   "en": "classification model",
+   "page": "07-1_nlp_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/regression": {
+   "ko": "회귀 모델",
+   "en": "regression model",
+   "page": "07-1_nlp_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/precision": {
+   "ko": "정밀도",
+   "en": "precision",
+   "page": "07-1_nlp_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/recall": {
+   "ko": "재현율",
+   "en": "recall",
+   "page": "07-1_nlp_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/f1": {
+   "ko": "F1",
+   "en": "F1 score",
+   "page": "07-1_nlp_ai_models",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/artificial-neuron": {
+   "ko": "인공 뉴런과 활성화 함수",
+   "en": "artificial neuron and activation function",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/rnn-vanishing-gradient": {
+   "ko": "순환 신경망과 기울기 소실",
+   "en": "recurrent neural network and vanishing gradients",
    "page": "10_final_review",
    "domain": [
     "ai-nlp"
@@ -610,6 +1482,86 @@
     "ai-nlp"
    ]
   },
+  "lab:method/7-2-duel-fly": {
+   "ko": "LSTM(망각 게이트 0.97)",
+   "en": "duel choice A 7-2",
+   "page": "07-2_rnn_lstm",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/7-2-duel-robo": {
+   "ko": "단순한 RNN(남기는 비율 0.8)",
+   "en": "duel choice B 7-2",
+   "page": "07-2_rnn_lstm",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/neuron": {
+   "ko": "뉴런",
+   "en": "neuron",
+   "page": "07-2_rnn_lstm",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/activation": {
+   "ko": "활성화 함수",
+   "en": "activation function",
+   "page": "07-2_rnn_lstm",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/relu": {
+   "ko": "ReLU",
+   "en": "ReLU",
+   "page": "07-2_rnn_lstm",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/rnn": {
+   "ko": "RNN",
+   "en": "recurrent neural network",
+   "page": "07-2_rnn_lstm",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/hidden-state": {
+   "ko": "은닉 상태",
+   "en": "hidden state",
+   "page": "07-2_rnn_lstm",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/vanishing-gradient": {
+   "ko": "기울기 소실",
+   "en": "vanishing gradient",
+   "page": "07-2_rnn_lstm",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/lstm": {
+   "ko": "LSTM",
+   "en": "long short-term memory",
+   "page": "07-2_rnn_lstm",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/seq2seq-architecture": {
+   "ko": "Seq2Seq 인코더-디코더 구조",
+   "en": "sequence-to-sequence encoder-decoder architecture",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
   "lab:method/seq2seq": {
    "ko": "Seq2Seq(인코더-디코더)",
    "en": "sequence-to-sequence encoder-decoder",
@@ -618,90 +1570,42 @@
     "ai-nlp"
    ]
   },
-  "lab:method/07-duel-fly": {
-   "ko": "LSTM(망각 게이트 0.97)",
-   "en": "duel choice A 07",
-   "page": "07_rnn_lstm_seq2seq",
+  "lab:method/teacher-forcing-bleu": {
+   "ko": "티처 포싱과 BLEU",
+   "en": "teacher forcing and BLEU score",
+   "page": "10_final_review",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:method/07-duel-robo": {
-   "ko": "단순한 RNN(남기는 비율 0.8)",
-   "en": "duel choice B 07",
-   "page": "07_rnn_lstm_seq2seq",
+  "lab:term/encoder": {
+   "ko": "인코더",
+   "en": "encoder",
+   "page": "07-3_seq2seq",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:method/classification": {
-   "ko": "분류 모델",
-   "en": "classification model",
-   "page": "07_rnn_lstm_seq2seq",
+  "lab:term/decoder": {
+   "ko": "디코더",
+   "en": "decoder",
+   "page": "07-3_seq2seq",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:method/regression": {
-   "ko": "회귀 모델",
-   "en": "regression model",
-   "page": "07_rnn_lstm_seq2seq",
+  "lab:term/context-vector": {
+   "ko": "문맥 벡터",
+   "en": "context vector",
+   "page": "07-3_seq2seq",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:term/precision": {
-   "ko": "정밀도",
-   "en": "precision",
-   "page": "07_rnn_lstm_seq2seq",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:term/recall": {
-   "ko": "재현율",
-   "en": "recall",
-   "page": "07_rnn_lstm_seq2seq",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:term/f1": {
-   "ko": "F1",
-   "en": "F1 score",
-   "page": "07_rnn_lstm_seq2seq",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/rnn": {
-   "ko": "RNN",
-   "en": "recurrent neural network",
-   "page": "07_rnn_lstm_seq2seq",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/lstm": {
-   "ko": "LSTM",
-   "en": "long short-term memory",
-   "page": "07_rnn_lstm_seq2seq",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:term/vanishing-gradient": {
-   "ko": "기울기 소실",
-   "en": "vanishing gradient",
-   "page": "07_rnn_lstm_seq2seq",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:term/hidden-state": {
-   "ko": "은닉 상태",
-   "en": "hidden state",
-   "page": "07_rnn_lstm_seq2seq",
+  "lab:term/autoregressive": {
+   "ko": "자기회귀",
+   "en": "autoregressive",
+   "page": "07-3_seq2seq",
    "domain": [
     "ai-nlp"
    ]
@@ -709,15 +1613,39 @@
   "lab:term/bottleneck": {
    "ko": "정보 병목",
    "en": "information bottleneck",
-   "page": "07_rnn_lstm_seq2seq",
+   "page": "08-1_seq2seq_limits",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:method/teacher-forcing": {
+  "lab:term/teacher-forcing": {
    "ko": "티처 포싱",
    "en": "teacher forcing",
-   "page": "07_rnn_lstm_seq2seq",
+   "page": "07-3_seq2seq",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/bleu": {
+   "ko": "BLEU",
+   "en": "BLEU score",
+   "page": "07-3_seq2seq",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/brevity-penalty": {
+   "ko": "간결성 페널티",
+   "en": "brevity penalty",
+   "page": "07-3_seq2seq",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/seq2seq-to-transformer": {
+   "ko": "Seq2Seq에서 트랜스포머로의 진화",
+   "en": "evolution from Seq2Seq to Transformer",
+   "page": "10_final_review",
    "domain": [
     "ai-nlp"
    ]
@@ -725,6 +1653,62 @@
   "lab:method/beam-search": {
    "ko": "빔 서치와 Seq2Seq 개선 방안",
    "en": "beam search and seq2seq improvements",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/seq2seq-improvements": {
+   "ko": "Seq2Seq 개선 기법",
+   "en": "Seq2Seq improvement techniques",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/rlhf": {
+   "ko": "RLHF",
+   "en": "reinforcement learning from human feedback",
+   "page": "08-1_seq2seq_limits",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/greedy-decoding": {
+   "ko": "탐욕적 디코딩",
+   "en": "greedy decoding",
+   "page": "08-1_seq2seq_limits",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/residual": {
+   "ko": "잔차 연결",
+   "en": "residual connection",
+   "page": "08-1_seq2seq_limits",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/layernorm": {
+   "ko": "층 정규화",
+   "en": "layer normalization",
+   "page": "08-1_seq2seq_limits",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/coverage": {
+   "ko": "커버리지 메커니즘",
+   "en": "coverage mechanism",
+   "page": "08-1_seq2seq_limits",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/query-key-value": {
+   "ko": "Query·Key·Value 어텐션",
+   "en": "query-key-value attention",
    "page": "10_final_review",
    "domain": [
     "ai-nlp"
@@ -738,6 +1722,70 @@
     "ai-nlp"
    ]
   },
+  "lab:method/attention-heatmap-evaluation": {
+   "ko": "어텐션 효과 평가와 히트맵 해석",
+   "en": "evaluating attention and reading heatmaps",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/query": {
+   "ko": "Query",
+   "en": "query",
+   "page": "08-2_attention",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/key": {
+   "ko": "Key",
+   "en": "key",
+   "page": "08-2_attention",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/value": {
+   "ko": "Value",
+   "en": "value",
+   "page": "08-2_attention",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/softmax": {
+   "ko": "소프트맥스",
+   "en": "softmax",
+   "page": "08-2_attention",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/attention-heatmap": {
+   "ko": "어텐션 히트맵",
+   "en": "attention heatmap",
+   "page": "08-2_attention",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/alignment": {
+   "ko": "정렬",
+   "en": "alignment",
+   "page": "08-2_attention",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/transformer-architecture": {
+   "ko": "트랜스포머 구조",
+   "en": "Transformer architecture",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
   "lab:method/transformer": {
    "ko": "트랜스포머와 셀프 어텐션",
    "en": "transformer and self-attention",
@@ -746,58 +1794,26 @@
     "ai-nlp"
    ]
   },
-  "lab:method/08-duel-fly": {
+  "lab:method/positional-encoding": {
+   "ko": "사인·코사인 포지셔널 인코딩",
+   "en": "sinusoidal positional encoding",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/8-3-duel-fly": {
    "ko": "문맥 벡터 크기를 두 배로",
-   "en": "duel choice A 08",
-   "page": "08_attention_transformer",
+   "en": "duel choice A 8-3",
+   "page": "08-3_transformer",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:method/08-duel-robo": {
+  "lab:method/8-3-duel-robo": {
    "ko": "어텐션(디코더가 원문 전체를 다시 봄)",
-   "en": "duel choice B 08",
-   "page": "08_attention_transformer",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/greedy-decoding": {
-   "ko": "탐욕적 디코딩",
-   "en": "greedy decoding",
-   "page": "08_attention_transformer",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/residual": {
-   "ko": "잔차 연결",
-   "en": "residual connection",
-   "page": "08_attention_transformer",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/layer-norm": {
-   "ko": "층 정규화",
-   "en": "layer normalization",
-   "page": "08_attention_transformer",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:term/softmax": {
-   "ko": "소프트맥스",
-   "en": "softmax",
-   "page": "08_attention_transformer",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:term/attention-heatmap": {
-   "ko": "어텐션 히트맵",
-   "en": "attention heatmap",
-   "page": "08_attention_transformer",
+   "en": "duel choice B 8-3",
+   "page": "08-3_transformer",
    "domain": [
     "ai-nlp"
    ]
@@ -805,7 +1821,7 @@
   "lab:method/self-attention": {
    "ko": "셀프 어텐션",
    "en": "self-attention",
-   "page": "08_attention_transformer",
+   "page": "08-3_transformer",
    "domain": [
     "ai-nlp"
    ]
@@ -813,15 +1829,31 @@
   "lab:method/multi-head": {
    "ko": "멀티헤드 어텐션",
    "en": "multi-head attention",
-   "page": "08_attention_transformer",
+   "page": "08-3_transformer",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:method/positional-encoding": {
-   "ko": "포지셔널 인코딩",
-   "en": "positional encoding",
-   "page": "08_attention_transformer",
+  "lab:term/sin-cos": {
+   "ko": "사인·코사인",
+   "en": "sine and cosine",
+   "page": "08-3_transformer",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/period": {
+   "ko": "주기",
+   "en": "period",
+   "page": "08-3_transformer",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/language-model-scaling": {
+   "ko": "언어모델의 발전과 규모 확대",
+   "en": "evolution and scaling of language models",
+   "page": "10_final_review",
    "domain": [
     "ai-nlp"
    ]
@@ -829,6 +1861,102 @@
   "lab:concept/gpt-bert": {
    "ko": "GPT와 BERT",
    "en": "GPT and BERT",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/modern-model-family": {
+   "ko": "최신 언어모델 가족",
+   "en": "family of modern language models",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/parameter": {
+   "ko": "파라미터",
+   "en": "parameter",
+   "page": "09-1_modern_lm_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/few-shot": {
+   "ko": "Few-shot 학습",
+   "en": "few-shot learning",
+   "page": "09-1_modern_lm_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/masked-attention": {
+   "ko": "마스크드 어텐션",
+   "en": "masked attention",
+   "page": "09-1_modern_lm_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/gpt": {
+   "ko": "GPT",
+   "en": "generative pre-trained transformer",
+   "page": "09-1_modern_lm_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/bert": {
+   "ko": "BERT",
+   "en": "BERT",
+   "page": "09-1_modern_lm_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/mlm": {
+   "ko": "마스크 언어모델",
+   "en": "masked language model",
+   "page": "09-1_modern_lm_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/t5": {
+   "ko": "T5",
+   "en": "T5",
+   "page": "09-1_modern_lm_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/electra": {
+   "ko": "ELECTRA",
+   "en": "ELECTRA",
+   "page": "09-1_modern_lm_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/multimodal": {
+   "ko": "멀티모달",
+   "en": "multimodal",
+   "page": "09-1_modern_lm_overview",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/transfer-learning": {
+   "ko": "전이학습",
+   "en": "transfer learning",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/hugging-face-transformers": {
+   "ko": "Hugging Face Transformers",
+   "en": "Hugging Face Transformers library and Model Hub",
    "page": "10_final_review",
    "domain": [
     "ai-nlp"
@@ -842,6 +1970,102 @@
     "ai-nlp"
    ]
   },
+  "lab:method/9-2-duel-fly": {
+   "ko": "작은 모델을 우리 데이터로 파인튜닝",
+   "en": "duel choice A 9-2",
+   "page": "09-2_transfer_prompt",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/9-2-duel-robo": {
+   "ko": "큰 사전훈련 모델 + 예시 몇 개(Few-shot)",
+   "en": "duel choice B 9-2",
+   "page": "09-2_transfer_prompt",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/pretraining": {
+   "ko": "사전훈련",
+   "en": "pre-training",
+   "page": "09-2_transfer_prompt",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/fine-tuning": {
+   "ko": "미세조정",
+   "en": "fine-tuning",
+   "page": "09-2_transfer_prompt",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/hugging-face": {
+   "ko": "Hugging Face",
+   "en": "Hugging Face",
+   "page": "09-2_transfer_prompt",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/tokenizer": {
+   "ko": "토크나이저",
+   "en": "tokenizer",
+   "page": "09-2_transfer_prompt",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:term/model-card": {
+   "ko": "모델 카드",
+   "en": "model card",
+   "page": "09-2_transfer_prompt",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/fine-tuning": {
+   "ko": "파인튜닝",
+   "en": "fine-tuning",
+   "page": "09-2_transfer_prompt",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/prompt-engineering": {
+   "ko": "프롬프트 엔지니어링",
+   "en": "prompt engineering",
+   "page": "09-2_transfer_prompt",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/few-shot": {
+   "ko": "Few-shot",
+   "en": "few-shot prompting",
+   "page": "09-2_transfer_prompt",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:concept/llm-characteristics": {
+   "ko": "대규모 언어모델의 특징",
+   "en": "characteristics of large language models",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
+  "lab:method/domain-adaptation": {
+   "ko": "도메인 특화와 점진적 미세조정",
+   "en": "domain-specific models and progressive fine-tuning",
+   "page": "10_final_review",
+   "domain": [
+    "ai-nlp"
+   ]
+  },
   "lab:method/rag": {
    "ko": "LLM과 RAG",
    "en": "large language models and retrieval-augmented generation",
@@ -850,90 +2074,42 @@
     "ai-nlp"
    ]
   },
-  "lab:method/09-duel-fly": {
-   "ko": "작은 모델을 우리 데이터로 파인튜닝",
-   "en": "duel choice A 09",
-   "page": "09_modern_llm",
+  "lab:term/versatility": {
+   "ko": "범용성",
+   "en": "versatility",
+   "page": "09-3_llm_rag",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:method/09-duel-robo": {
-   "ko": "큰 사전훈련 모델 + 예시 몇 개(Few-shot)",
-   "en": "duel choice B 09",
-   "page": "09_modern_llm",
+  "lab:term/emergence": {
+   "ko": "창발성",
+   "en": "emergence",
+   "page": "09-3_llm_rag",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:method/gpt": {
-   "ko": "GPT",
-   "en": "generative pre-trained transformer",
-   "page": "09_modern_llm",
+  "lab:term/domain-adaptation": {
+   "ko": "도메인 적응",
+   "en": "domain adaptation",
+   "page": "09-3_llm_rag",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:method/bert": {
-   "ko": "BERT",
-   "en": "BERT",
-   "page": "09_modern_llm",
+  "lab:term/domain-model": {
+   "ko": "도메인 특화 모델",
+   "en": "domain-specific model",
+   "page": "09-3_llm_rag",
    "domain": [
     "ai-nlp"
    ]
   },
-  "lab:method/mlm": {
-   "ko": "마스크 언어모델",
-   "en": "masked language model",
-   "page": "09_modern_llm",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/t5": {
-   "ko": "T5",
-   "en": "text-to-text transfer transformer",
-   "page": "09_modern_llm",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/transfer-learning": {
-   "ko": "전이학습",
-   "en": "transfer learning",
-   "page": "09_modern_llm",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/fine-tuning": {
-   "ko": "파인튜닝",
-   "en": "fine-tuning",
-   "page": "09_modern_llm",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/prompt-engineering": {
-   "ko": "프롬프트 엔지니어링",
-   "en": "prompt engineering",
-   "page": "09_modern_llm",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:method/few-shot": {
-   "ko": "Few-shot",
-   "en": "few-shot prompting",
-   "page": "09_modern_llm",
-   "domain": [
-    "ai-nlp"
-   ]
-  },
-  "lab:term/hugging-face": {
-   "ko": "Hugging Face",
-   "en": "Hugging Face",
-   "page": "09_modern_llm",
+  "lab:concept/llm": {
+   "ko": "LLM",
+   "en": "large language model",
+   "page": "09-3_llm_rag",
    "domain": [
     "ai-nlp"
    ]
@@ -941,7 +2117,7 @@
   "lab:term/vector-db": {
    "ko": "벡터 데이터베이스",
    "en": "vector database",
-   "page": "09_modern_llm",
+   "page": "09-3_llm_rag",
    "domain": [
     "ai-nlp"
    ]

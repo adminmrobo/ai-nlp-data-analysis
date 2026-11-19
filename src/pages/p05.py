@@ -2,7 +2,7 @@ from _common import REF0
 Q = lambda q, o, a, why, lv=0, kind='교안', hint='해당 회차 페이지의 풀이 상자를 다시 보세요.': dict(q=q, o=o, a=a, why=why, lv=lv, kind=kind, hint=hint)
 
 P = dict(
- kind='review', num='05', key='05', file='05_midterm_review.html', short_title='중간 요약정리 및 퀴즈',
+ kind='review', num='5', key='5', file='05_midterm_review.html', short_title='중간 요약정리 및 퀴즈',
  title='중간 요약정리 및 퀴즈 — 1~4회차', eyebrow='5회 · 중간 점검 · 자연어 데이터에서 워드 임베딩까지',
  question='리뷰 1만 건을 받았다. 분석 결과를 보고하기 전에 무엇을 확인해야 할까?', desc='1~4회차(인공지능과 자연어 데이터, 분석 프로세스, 형태소와 말뭉치, 워드 임베딩·TF-IDF·LDA)의 요약, 교안 연습문제, 업무 장면 계산 문제를 한 페이지에서 풀어 보는 중간 정리.',
  intro='1부는 회차별 요약, 2부는 교안의 확인 문제(원자료에서 정답·보기가 어긋난 문항은 바로잡음), 3부는 업무 장면 계산 문제예요. 점수는 저장하지 않습니다.',
@@ -63,5 +63,5 @@ P = dict(
  sources=['안상선 (2025). 인공지능 자연어 처리 1~4회차 강의 스토리보드·원고 v1.0의 확인 문제(일부 선택·수정).'],
  examples=['3부 업무 계산 문제의 숫자는 모두 예시값입니다.'],
  changes=['1회차 원자료 1번 문항의 정답(X)을 해설에 맞게 O로 바꿨습니다.', '4회차 원자료 4번 문항은 보기 ②·③이 빠져 있어 ① −1 ② 0 ③ 1 ④ 2로 채웠고, 5번 문항의 해설(불용어 설명)을 분산 가설 해설로 바꿨습니다.', '2회차 원자료 9·10번(BERT·GPT)은 본문 범위 밖이라 10회 기말 정리로 옮겼습니다.'],
- prev=('04_word_embedding.html', '4회차 워드 임베딩'), next=('06_word2vec.html', '6회차 Word2Vec')
+ prev=('04-3_topic_lda.html', '4-3 토픽 기반 워드 임베딩'), next=('06-1_word2vec_overview.html', '6-1 Word2Vec 개요')
 )

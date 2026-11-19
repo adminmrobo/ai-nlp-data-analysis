@@ -55,7 +55,7 @@ def make(p):
     for ln in lines: d.text((70, y), ln, font=tf, fill=(29, 32, 48)); y += 100
     d.text((72, y + 6), sub, font=font(34, False), fill=c); y += 70
     d.text((72, H - 78), '말귀 타워 · ' + floor, font=font(26, False), fill=(93, 98, 120))
-    rnd = random.Random(int(key) + 7); cf = font(30)
+    rnd = random.Random(int(str(key).replace('-', '')) + 7); cf = font(30)
     spots = [(900, 120), (1150, 90), (1380, 150), (960, 230), (1230, 210), (1440, 270), (880, 330), (1150, 330)]
     for (x, y_), wd in zip(spots, words):
         x += rnd.randint(-20, 20); y_ += rnd.randint(-12, 12); tw = d.textlength(wd, font=cf)
