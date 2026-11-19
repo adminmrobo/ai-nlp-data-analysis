@@ -68,7 +68,7 @@ def cover(P, M, key):
     if os.path.exists(f):
         b64 = base64.b64encode(open(f, 'rb').read()).decode()
         t = re.sub('<[^>]+>', '', P['title'])
-        alt = f'{t} 표지 그림: 박사, 조수(하루), 초파리 연구원, 주판봇이 흰 배경의 연구실에서 이 회차의 단어 카드와 주제 소품을 둘러싼 장면'
+        alt = f'{t} 픽셀풍(16비트 RPG 픽셀아트) 표지 그림: 박사, 조수(하루), 초파리 연구원, 주판봇이 흰 배경의 연구실에서 이 회차의 단어 카드와 주제 소품을 둘러싼 장면'
         return (f'<header class="cover hasimg" id="cover" data-img="{key}">'
                 f'<img src="data:image/webp;base64,{b64}" width="1600" height="900" alt="{e(alt)}" decoding="async">'
                 f'<span class="cover-chip">{e(chip)}</span></header>\n')
