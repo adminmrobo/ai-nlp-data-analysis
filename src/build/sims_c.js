@@ -2,10 +2,10 @@
 function evx(expr,v){var k=Object.keys(v),f=new Function(k.concat(['log','ln','exp','sqrt','pow','min','max','abs','cos','sin','PI']).join(','),'return ('+expr+')');return f.apply(null,k.map(function(x){return v[x]}).concat([Math.log10,Math.log,Math.exp,Math.sqrt,Math.pow,Math.min,Math.max,Math.abs,Math.cos,Math.sin,Math.PI]))}
 function fmtv(x,d){if(typeof x!=='number')return esc(String(x));if(!isFinite(x))return '—';if(typeof d==='string'&&d[0]==='%'){var pd=+d.slice(1)||1;return (x>0&&x<0.001)?(+(x*100).toPrecision(2))+'%':(x*100).toFixed(pd)+'%'}if(d==='e'){var u=[[1e16,'경'],[1e12,'조'],[1e8,'억'],[1e4,'만']];for(var i=0;i<u.length;i++)if(Math.abs(x)>=u[i][0]){var q=x/u[i][0];return (q>=100?nf(q,0):+q.toPrecision(3))+u[i][1]}return nf(x,0)}return nf(x,d==null?2:d)}
 
-/* 분류해 보기: 카드마다 칸 고르기 */
+/* 분류해 보기: 카드마다 상자 고르기 */
 SIMS.sorter=function(el,cfg){var box=h('div',{class:'tw'}),row=ctrlRow(el),K=kpis(el,3),I=insight(el),ans={},shown=false;el.appendChild(box);el.insertBefore(box,row);
   action(row,'정답 보기',function(){shown=!shown;draw()},true);action(row,'다시',function(){ans={};shown=false;draw()});
-  function draw(){var ok=0,done=0;box.innerHTML='<p class="muted" style="margin:0 0 8px">'+esc(cfg.ask||'카드마다 알맞은 칸을 눌러 보세요.')+'</p><div class="sgrid">'+cfg.items.map(function(it,i){var a=ans[i];if(a!=null){done++;if(a===it.a)ok++}
+  function draw(){var ok=0,done=0;box.innerHTML='<p class="muted" style="margin:0 0 8px">'+esc(cfg.ask||'카드마다 알맞은 상자를 눌러 보세요.')+'</p><div class="sgrid">'+cfg.items.map(function(it,i){var a=ans[i];if(a!=null){done++;if(a===it.a)ok++}
       return '<div class="srow'+(a!=null?(a===it.a?' ok':' no'):'')+'"><p><b>'+esc(it.t)+'</b></p><div class="group">'+cfg.bins.map(function(b,j){return '<button class="bt" type="button" data-i="'+i+'" data-j="'+j+'" aria-pressed="'+(a===j)+'">'+esc(b)+'</button>'}).join('')+'</div>'+((a!=null||shown)?'<p class="muted" style="font-size:14px;margin:6px 0 0">'+(a!=null?(a===it.a?'✓ 맞아요. ':'✗ 정답은 "'+esc(cfg.bins[it.a])+'". '):'정답: '+esc(cfg.bins[it.a])+'. ')+esc(it.why||'')+'</p>':'')+'</div>'}).join('')+'</div>';
     $$('button[data-i]',box).forEach(function(b){b.addEventListener('click',function(){ans[+b.dataset.i]=+b.dataset.j;draw()})});
     K([[done+' / '+cfg.items.length,'고른 카드','i'],[ok+'개','맞힌 카드',ok===cfg.items.length?'g':'a'],[done?pct(ok/done,0):'—','정답률','m']]);

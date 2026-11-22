@@ -10,7 +10,7 @@ PAL = dict(ink=(29, 32, 48), mute=(93, 98, 120), line=(232, 236, 244), panel=(24
 def F(sz, bold=True): return ImageFont.truetype(MC.F if bold else MC.FM, sz, index=1)
 
 def box(d, x0, y0, x1, y1, fill, edge, shadow=(214, 219, 232)):
-    """계단식 모서리 상자 + 한 칸 그림자(픽셀 UI 창)."""
+    """계단식 모서리 상자 + 한 픽셀 그림자(픽셀 UI 창)."""
     d.rectangle([x0 + 2, y1 + 1, x1 + 2, y1 + 2], fill=shadow); d.rectangle([x1 + 1, y0 + 2, x1 + 2, y1 + 2], fill=shadow)
     d.rectangle([x0 + 1, y0, x1 - 1, y1], fill=fill); d.rectangle([x0, y0 + 1, x1, y1 - 1], fill=fill)
     d.line([(x0 + 1, y0), (x1 - 1, y0)], fill=edge); d.line([(x0 + 1, y1), (x1 - 1, y1)], fill=edge)
@@ -68,7 +68,7 @@ def make(p):
         tw = d.textlength(wd, font=cf); x = min(x + rnd.randint(-6, 6), LW - 10 - tw - 12); y_ += rnd.randint(-3, 3)
         fill, edge, txt = rnd.choice(kinds); box(d, x, y_, int(x + tw + 12), y_ + 17, fill, edge); d.text((x + 6, y_ + 2), wd, font=cf, fill=txt)
     d.text((24, LH - 24), '말귀 타워 · ' + floor, font=F(10, False), fill=PAL['mute'])
-    # 캐릭터 넷(최근접 축소) + 한 칸 그림자
+    # 캐릭터 넷(최근접 축소) + 한 픽셀 그림자
     x = 250
     for who, mood in zip(MC.WHO, moods):
         ch = sprite(who, mood, 84); yb = LH - 14

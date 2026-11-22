@@ -2,7 +2,7 @@
 """P&E 글로벌 본사 타워 — 3D 첫 화면(건물 안내)
 
 목차(index)는 건물 전체를, 회차 쪽은 그 회차가 들어 있는 층을 3D로 보여 주고
-층 평면(방 = 이 쪽의 칸)과 둘러보는 순서를 안내한다.
+층 평면(방 = 이 쪽의 부분)과 둘러보는 순서를 안내한다.
 
 - build.py / build_extra.py 가 nav 바로 뒤, 표지 그림 앞에 tower_html(key)를 넣는다.
 - 이미 빌드된 HTML에는 add_tower.py 로 같은 블록을 넣거나 갈아 끼운다(표식 <!--tower:start--> … <!--tower:end-->).
@@ -24,14 +24,14 @@ CLOCKS = [('서울', 'Asia/Seoul'), ('도쿄', 'Asia/Tokyo'), ('런던', 'Europe
 PAL = ['#3f5fa8', '#138a52', '#d23f2c', '#2563c9', '#a8329f', '#b77800', '#14899a', '#7a45d6']
 
 def LES(a, b, c, sa, sb, sc):
-    return [('three', '안내 데스크', '3줄 요약'), ('cast', '팀 라운지', '연구실 식구'), ('lv1', a, '칸 ① ' + sa), ('lv2', b, '칸 ② ' + sb), ('lv3', c, '칸 ③ ' + sc),
+    return [('three', '안내 데스크', '3줄 요약'), ('cast', '팀 라운지', '연구실 식구'), ('lv1', a, '부분 ① ' + sa), ('lv2', b, '부분 ② ' + sb), ('lv3', c, '부분 ③ ' + sc),
             ('dash', '상황실', '한눈에 보는 대시보드'), ('duel', '대결 홀', '초파리 대 주판봇 대결'), ('sum', '정리 데스크', '정리'), ('kg', '자료실', '지식 색인 · 꾸러미')]
 
 REV = [('three', '안내 데스크', '3줄 요약'), ('cast', '팀 라운지', '연구실 식구'), ('summary', '요약 갤러리', '1부 요약'), ('orig', '교안 문제 시험장', '2부 교안 문제'),
        ('calc', '업무 계산실', '3부 업무 계산'), ('score', '점수판', '회차별 점수'), ('kg', '자료실', '지식 색인 · 꾸러미')]
 
 IDX = [('three', '안내 데스크', '3줄 요약'), ('map', '층별 안내판', '회차 지도'), ('keys', '한 줄 핵심 게시판', '한 줄 핵심 모음'), ('dash', '종합 상황실', '종합 대시보드'),
-       ('path', '개념 계단', '개념 사다리'), ('how', '식구 라운지', '식구 · 사용법'), ('about', '자료 보관실', '자료와 원칙')]
+       ('path', '개념 계단', '개념 흐름'), ('how', '식구 라운지', '식구 · 사용법'), ('about', '자료 보관실', '자료와 원칙')]
 
 # 아래에서 위로: 로비 → 강의 1~4회차(3쪽씩) → 5회 중간 점검 라운지 → 강의 6~9회차(3쪽씩) → 10회 옥상 전망대
 import sys as _s; _s.path.insert(0, os.path.join(os.path.dirname(B), 'pages'))
@@ -40,7 +40,7 @@ DASHP = {'1-1', '2-3', '3-3', '4-2', '6-3', '7-1', '8-2', '9-2'}
 DUELP = {'1-1', '2-1', '3-3', '4-2', '6-3', '7-2', '8-3', '9-2'}
 LECTN = {1: '인공지능과 자연어 데이터 분석', 2: '자연어 데이터 분석 프로세스 및 모델', 3: '전처리: 형태소와 말뭉치', 4: '워드 임베딩', 5: 'Word2Vec 활용', 6: '텍스트 생성: 기본', 7: '텍스트 생성: 고급', 8: '최신 인공지능 언어모델'}
 def _rooms(num):
-    r = [('three', '안내 데스크', '3줄 요약'), ('cast', '팀 라운지', '연구실 식구'), ('lv1', '작업실 ①', '칸 ①'), ('lv2', '작업실 ②', '칸 ②'), ('lv3', '작업실 ③', '칸 ③')]
+    r = [('three', '안내 데스크', '3줄 요약'), ('cast', '팀 라운지', '연구실 식구'), ('lv1', '작업실 ①', '부분 ①'), ('lv2', '작업실 ②', '부분 ②'), ('lv3', '작업실 ③', '부분 ③')]
     if num in DASHP: r.append(('dash', '상황실', '한눈에 보는 대시보드'))
     if num in DUELP: r.append(('duel', '대결 홀', '초파리 대 주판봇 대결'))
     return r + [('sum', '정리 데스크', '정리'), ('kg', '자료실', '지식 색인 · 꾸러미')]
@@ -49,7 +49,7 @@ for _i, (_n, _f, _t, _l) in enumerate(_SEQ):
     if _l == 0:
         FLOORS.append(dict(key=_n, label=f'{_i+1}F', file=_f, dept='중간 점검 라운지' if _n == '5' else '옥상 전망대', en='Review Lounge' if _n == '5' else 'Rooftop Review Deck', branch='모든 팀 공용 공간', title=_t + (' — 1~4회차' if _n == '5' else ' — 6~9회차'), ep=f'{_n}회', biz='아래층들을 돌아본 연구원들이 요약을 보고, 교안 문제와 업무 계산으로 점검하는 곳이에요.', rooms=REV))
     else:
-        FLOORS.append(dict(key=_n, label=f'{_i+1}F', file=_f, dept=_t, en=f'Session {_n}', branch=f'원 강의 {_l}회차 · {LECTN[_l]}', title=_t, ep=f'{_n}회차', biz=f'원 강의 {_l}회차 「{LECTN[_l]}」의 학습 내용 하나를 칸 세 개로 나눠 다루는 팀이에요.', rooms=_rooms(_n)))
+        FLOORS.append(dict(key=_n, label=f'{_i+1}F', file=_f, dept=_t, en=f'Session {_n}', branch=f'원 강의 {_l}회차 · {LECTN[_l]}', title=_t, ep=f'{_n}회차', biz=f'원 강의 {_l}회차 「{LECTN[_l]}」의 학습 내용 하나를 부분 세 개로 나눠 다루는 팀이에요.', rooms=_rooms(_n)))
 for i, f in enumerate(FLOORS):
     f['color'] = '#5d6278' if f['key'] in ('00',) else ('#138a52' if f['key'] in ('5', '10') else PAL[(i - 1) % len(PAL)])
 KEYS = [f['key'] for f in FLOORS]
@@ -113,7 +113,7 @@ def tower_html(key):
     panel = _panel_index(f) if idx else _panel_floor(f)
     tools = ('<button type="button" data-v="b" class="on">건물 전체</button><button type="button" data-v="spin" aria-pressed="true">자동 회전</button>' if idx else
              '<button type="button" data-v="b">건물 전체</button><button type="button" data-v="p" class="on">이 층 평면</button>')
-    hint = '드래그로 돌려 보고 층을 누르면 안내 카드가 열려요' if idx else '방을 누르면 그 칸으로 내려갑니다 · 드래그로 돌려 보기'
+    hint = '드래그로 돌려 보고 층을 누르면 안내 카드가 열려요' if idx else '방을 누르면 그 부분으로 내려갑니다 · 드래그로 돌려 보기'
     cap = (f'{COMPANY["ko"]} 3D 모형: 로비부터 26층 전망대까지 27개 층, 층마다 한 팀(회차)' if idx else
            f'{COMPANY["ko"]} 3D 모형에서 {f["label"]} {f["dept"]}을(를) 건물 밖으로 꺼내 보여 주는 층 평면')
     data = json.dumps(_data(key), ensure_ascii=False).replace('</', '<\\/')

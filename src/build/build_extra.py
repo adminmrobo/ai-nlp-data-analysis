@@ -16,7 +16,7 @@ def strip(s): return re.sub('<[^>]+>', '', s)
 def WK(n):
     """시리즈 회차(예: '01') → 그 회차의 세 쪽 번호."""
     return [f'{int(n)}-{k}' for k in (1, 2, 3)]
-# 앞 판(회차당 한 쪽)의 칸 → 새 판의 (쪽, 칸 번호)
+# 앞 판(회차당 한 쪽)의 부분 → 새 판의 (쪽, 부분 번호)
 OLDMAP = {('01', 0): ('1-1', 1), ('01', 1): ('1-2', 1), ('01', 2): ('1-3', 1), ('02', 0): ('2-1', 0), ('02', 1): ('2-1', 2), ('02', 2): ('2-3', 1),
           ('03', 0): ('3-1', 1), ('03', 1): ('3-1', 2), ('03', 2): ('3-3', 2), ('04', 0): ('4-1', 0), ('04', 1): ('4-2', 1), ('04', 2): ('4-3', 1),
           ('06', 0): ('6-1', 0), ('06', 1): ('6-1', 2), ('06', 2): ('6-3', 1), ('07', 0): ('7-1', 2), ('07', 1): ('7-2', 2), ('07', 2): ('7-3', 1),
@@ -77,13 +77,13 @@ def review(P, B):
     for n in nums:
         c = P['calc'][n]
         steps = ''.join(f'<li>{s}</li>' for s in c['steps'])
-        pr.append(f'''<div class="prac" data-ans="{c["ans"]}" data-tol="{c["tol"]}" data-wk="{n}"><h4>{int(n)}회차 · {c["title"]} <small class="muted">({OLDMAP[(n, int(c['lv'][-1]) - 1)][0]}쪽)</small></h4><p>{c["q"]}</p><div class="inrow"><input type="text" inputmode="decimal" aria-label="{int(n)}회차 답 입력" placeholder="숫자만"><span class="muted">{c["unit"]}</span><button class="bt primary chk" type="button">채점</button><button class="bt show" type="button">풀이 보기</button></div><p class="pfb" aria-live="polite"></p><div class="sol"><ol>{steps}</ol><p class="miss"><b>초파리의 흔한 실수</b> · {c["miss"]}</p><p class="muted" style="font-size:14px"><b>업무에서는</b> · {c["work"]} (숫자는 예시값)</p><p style="font-size:14px"><a href="{L[OLDMAP[(n, int(c['lv'][-1]) - 1)][0]]["file"]}#lv{OLDMAP[(n, int(c['lv'][-1]) - 1)][1] + 1}">관련 칸 다시 보기 →</a></p></div></div>''')
+        pr.append(f'''<div class="prac" data-ans="{c["ans"]}" data-tol="{c["tol"]}" data-wk="{n}"><h4>{int(n)}회차 · {c["title"]} <small class="muted">({OLDMAP[(n, int(c['lv'][-1]) - 1)][0]}쪽)</small></h4><p>{c["q"]}</p><div class="inrow"><input type="text" inputmode="decimal" aria-label="{int(n)}회차 답 입력" placeholder="숫자만"><span class="muted">{c["unit"]}</span><button class="bt primary chk" type="button">채점</button><button class="bt show" type="button">풀이 보기</button></div><p class="pfb" aria-live="polite"></p><div class="sol"><ol>{steps}</ol><p class="miss"><b>초파리의 흔한 실수</b> · {c["miss"]}</p><p class="muted" style="font-size:14px"><b>업무에서는</b> · {c["work"]} (숫자는 예시값)</p><p style="font-size:14px"><a href="{L[OLDMAP[(n, int(c['lv'][-1]) - 1)][0]]["file"]}#lv{OLDMAP[(n, int(c['lv'][-1]) - 1)][1] + 1}">관련 부분 다시 보기 →</a></p></div></div>''')
     o.append(f'<section class="level" id="calc"><div class="wrap stack"><div class="lvhead"><div class="hexrow"><div class="hexno">3<small>계산</small></div><h2>3부 · 업무 장면 계산 문제</h2></div><p class="lead">회차마다 업무 장면 하나를 숫자로 풀어 봅니다. 답을 넣고 채점하면 허용 오차 안에서 정답 처리돼요. 모든 숫자는 예시값입니다.</p></div>{B.say("fly","point","단위부터 확인해. 퍼센트로 넣으라는데 0.15를 넣으면 틀린 거야.",M)}{"".join(pr)}</div></section>')
     # 점수
     sb = ''.join(f'<div data-wk="{n}" data-n="{len(P["orig"][n]["items"]) + 1}"><span>{int(n)}회차</span><b>0/{len(P["orig"][n]["items"]) + 1}</b><small class="muted"></small></div>' for n in nums)
     o.append(f'<section class="level" id="score"><div class="wrap stack"><div class="lvhead"><h2>회차별 점수</h2><p class="lead">교안 문제와 계산 문제를 맞힌 수예요. 저장하지 않으며, 새로고침하면 처음부터입니다.</p></div><div class="scoreboard">{sb}</div>{B.say("asst","report","70% 미만인 회차는 노란색으로 표시돼요. 그 회차 해설 페이지의 확인 퀴즈부터 다시 보세요.",M)}{B.say(*P["outro_doc"], M)}</div></section>')
     o.append(B.KG_SEC); o.append(B.export_sec(M)); o.append(B.footer(P))
-    # KG: 회차 칸 개념 + 문항
+    # KG: 회차 부분 개념 + 문항
     nodes = []; edges = []; ids = set()
     def node(id, type, ko, en, anchor, d=''):
         if id in ids: return
@@ -107,7 +107,7 @@ def review(P, B):
     for r in P['refs']:
         node(r['lab']['work'], 'Work', r['title'][:80], r['title'][:80], '#footer')
         edges.append({'s': r['lab']['work'], 'p': 'lab:relatedTo', 'o': L[WK(nums[0])[0]]['levels'][0]['node'][0], 'anchor': '#footer', 'confidence': 'mid'}) if r['id'].startswith('ahn2025') and False else None
-    # 문헌 노드 고립 방지: 각 회차 첫 칸이 해당 원고에 근거
+    # 문헌 노드 고립 방지: 각 회차 첫 부분이 해당 원고에 근거
     for n in nums:
         w = f'lab:work/ahn2025nlp{LECN(n):02d}'
         if w in ids: edges.append({'s': L[WK(n)[0]]['levels'][0]['node'][0], 'p': 'lab:relatedTo', 'o': w, 'anchor': '#summary', 'confidence': 'high'})
@@ -121,7 +121,7 @@ def review(P, B):
 def index(P, B):
     M = B.Moods(); L = lessons(B)
     for k, v in B.DEFM.items(): M.add(k, v)
-    links = [('three', '3줄 요약'), ('map', '회차 지도'), ('keys', '한 줄 핵심'), ('dash', '종합 대시보드'), ('path', '개념 사다리'), ('how', '식구·사용법'), ('about', '자료와 원칙')]
+    links = [('three', '3줄 요약'), ('map', '회차 지도'), ('keys', '한 줄 핵심'), ('dash', '종합 대시보드'), ('path', '개념 흐름'), ('how', '식구·사용법'), ('about', '자료와 원칙')]
     o = [B.head(P, P['title'], P['desc'], P['file']), B.nav(links, B.SERIES_SHORT), B.cover(P, M, 'cover_index')]
     kp = ''.join(f'<div class="kpi {c}"><b>{v}</b><span>{t}</span></div>' for v, t, c in P['kpis'])
     o.append(thumbs_css(B))
@@ -137,7 +137,7 @@ def index(P, B):
     mosaic = ''.join(f'<a class="mt th-{k.replace("-", "_")}" href="{f}" title="{e(t)}"><span>{lab}</span><i class="sr">{e(t)}</i></a>' for k, f, t, lab in tk)
     o.append(f'<header class="hero ihero" id="hero"><div class="wrap ihero-grid"><div class="hero-text"><span class="eyebrow">{e(P["eyebrow"])}</span><h1>{P["title"]}</h1><p class="q">{P["question"]}</p><p>{P["intro"]}</p><section class="kpis k4">{kp}</section></div><nav class="mosaic m26" aria-label="표지로 고르는 전체 26쪽">{mosaic}</nav></div><div class="wrap"><div class="dialog">{"".join(B.say(*t, M) for t in P["hero_talk"])}</div></div></header>')
     T = P['three']
-    o.append(f'<section class="level" id="three"><div class="wrap"><div class="three"><h2>처음 오신 분께 — 이 과정을 3줄로</h2><ol><li><b>무엇을</b><span>{T["what"]}</span></li><li><b>왜 중요한가</b><span>{T["why"]}</span></li><li><b>업무에서는</b><span>{T["work"]}</span></li></ol><p class="ok">코드·수식을 몰라도 됩니다. 처음이라면 아래 <a href="#keys">한 줄 핵심 모음</a>부터 보고, 각 회차에서는 칸마다 한 가지 핵심 → 일상 비유 → 실험만 봐도 충분해요. 수식·풀이·코드는 접어 두었어요.</p></div></div></section>')
+    o.append(f'<section class="level" id="three"><div class="wrap"><div class="three"><h2>처음 오신 분께 — 이 과정을 3줄로</h2><ol><li><b>무엇을</b><span>{T["what"]}</span></li><li><b>왜 중요한가</b><span>{T["why"]}</span></li><li><b>업무에서는</b><span>{T["work"]}</span></li></ol><p class="ok">코드·수식을 몰라도 됩니다. 처음이라면 아래 <a href="#keys">한 줄 핵심 모음</a>부터 보고, 각 회차에서는 부분마다 한 가지 핵심 → 일상 비유 → 실험만 봐도 충분해요. 수식·풀이·코드는 접어 두었어요.</p></div></div></section>')
     def card(p):
         Q = L[p]
         return f'<a href="{Q["file"]}"><span class="ct th-{p.replace("-", "_")}" aria-hidden="true"></span><b>{p} · {e(strip(Q["short_title"]))}</b><span style="font-weight:700">{e(strip(Q["title"]).split(" — ")[-1])}</span><small>{e(strip(Q["question"]))}</small></a>'
@@ -147,12 +147,12 @@ def index(P, B):
     part2 = ''.join(week(n) for n in WKS[4:]) + '<div class="series s3">' + rv('10', RV[1][1], '기말 요약정리 및 퀴즈', RV[1][3]) + '</div>'
     o.append(f'<section class="level" id="map"><div class="wrap stack"><div class="lvhead"><h2>회차 지도</h2><p class="lead">강의 8회차의 학습내용 24개를 한 쪽씩 만들고, 중간(5회)·기말(10회) 요약정리 두 쪽을 더해 모두 스물여섯 쪽입니다. 1부는 자연어 데이터를 모으고 다듬어 숫자로 바꾸는 과정, 2부는 단어 벡터에서 최신 언어모델까지예요. 원 강의의 5~8회차는 이 시리즈의 6~9회차입니다.</p></div><h3>1부 · 자연어 데이터에서 워드 임베딩까지 (1~4회차 + 5회 중간 점검)</h3>{part1}<h3>2부 · Word2Vec에서 최신 언어모델까지 (6~9회차 + 10회 기말 점검)</h3>{part2}</div></section>')
     kcards = ''.join(f'<div class="kcard"><a href="{L[k]["file"]}"><b>{k}</b> {e(strip(L[k].get("short_title") or L[k]["title"]))}</a><ol>' + ''.join(f'<li>{e(strip(l["key"]))}</li>' for l in L[k]['levels'] if l.get('key')) + '</ol></div>' for k in LES)
-    o.append(f'<section class="level" id="keys"><div class="wrap stack"><div class="lvhead"><h2>한 줄 핵심 모음 — 24쪽 {3 * len(LES)}가지</h2><p class="lead">각 쪽 칸 맨 위의 "이 칸에서 가져갈 한 가지"를 모았어요. 복습하거나 수업·팀 교육에서 한 장으로 띄울 때 쓰세요.</p></div><div class="kgrid">{kcards}</div></div></section>')
+    o.append(f'<section class="level" id="keys"><div class="wrap stack"><div class="lvhead"><h2>한 줄 핵심 모음 — 24쪽 {3 * len(LES)}가지</h2><p class="lead">각 쪽 부분 맨 위의 "이 부분에서 가져갈 한 가지"를 모았어요. 복습하거나 수업·팀 교육에서 한 장으로 띄울 때 쓰세요.</p></div><div class="kgrid">{kcards}</div></div></section>')
     DL = [p for p in LES if L[p].get('dash')]
     tabs = ''.join(f'<button class="bt" type="button" aria-pressed="false" data-k="{L[p]["dash"]}" data-f="{L[p]["file"]}">{p}</button>' for p in DL)
     o.append(f'<section class="level" id="dash"><div class="wrap stack"><div class="lvhead"><h2>종합 대시보드 — 여덟 회차를 한 화면에서</h2><p class="lead">쪽 번호 버튼을 누르면 그 쪽의 핵심 모형이 열립니다. 슬라이더를 움직이거나 ▶ 재생을 눌러 보세요. 같은 대시보드가 해당 쪽에도 들어 있어요.</p></div><div class="dtabs" role="group" aria-label="회차 고르기">{tabs}</div><div class="dash panel" id="dashbox"></div><p><a id="dashlink" href="{L[DL[0]]["file"]}#dash">{DL[0]}쪽 해설 페이지에서 자세히 보기 →</a></p></div></section>')
     chips = ' <i>→</i> '.join(f'<span>{e(x)}</span>' for x in P['ladder'])
-    o.append(f'<section class="level" id="path"><div class="wrap stack"><div class="lvhead"><h2>개념 사다리</h2><p class="lead">앞 회차의 한계가 다음 회차의 이유가 되도록 이어 두었어요.</p></div><div class="flowchips">{chips}</div><div class="tw"><table class="tb"><tr><th>쪽</th><th>핵심 질문</th><th>이 쪽이 남긴 질문 → 다음 쪽</th></tr>' + ''.join(f'<tr><td>{n}</td><td>{e(strip(L[n]["question"]))}</td><td>{e(strip(L[n]["next_q"]))}</td></tr>' for n in LES) + '</table></div></div></section>')
+    o.append(f'<section class="level" id="path"><div class="wrap stack"><div class="lvhead"><h2>개념 흐름</h2><p class="lead">앞 회차의 한계가 다음 회차의 이유가 되도록 이어 두었어요.</p></div><div class="flowchips">{chips}</div><div class="tw"><table class="tb"><tr><th>쪽</th><th>핵심 질문</th><th>이 쪽이 남긴 질문 → 다음 쪽</th></tr>' + ''.join(f'<tr><td>{n}</td><td>{e(strip(L[n]["question"]))}</td><td>{e(strip(L[n]["next_q"]))}</td></tr>' for n in LES) + '</table></div></div></section>')
     cast = B.crew_html(M)
     how = ''.join(f'<div><b>{a}</b><p>{b}</p></div>' for a, b in P['how'])
     o.append(f'<section class="level" id="how"><div class="wrap stack"><div class="lvhead"><h2>연구실 식구와 사용법</h2></div>{cast}<div class="steps four">{how}</div></div></section>')

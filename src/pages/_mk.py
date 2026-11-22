@@ -23,7 +23,7 @@ def _old(n):
         sp = importlib.util.spec_from_file_location('o' + n, os.path.join(D, f'_o{n}.py')); m = importlib.util.module_from_spec(sp); sp.loader.exec_module(m); _cache[n] = m.P
     return _cache[n]
 def old(n, i):
-    """기존 페이지 n(시리즈 번호 '01'..'09')의 i번째 칸(0부터)을 퀴즈·용어와 함께 가져온다."""
+    """기존 페이지 n(시리즈 번호 '01'..'09')의 i번째 부분(0부터)을 퀴즈·용어와 함께 가져온다."""
     P = _old(n); l = copy.deepcopy(P['levels'][i]); l['quiz'] = copy.deepcopy(P['quiz'].get(l['id'], []))
     l['_gloss'] = {k: v for k, v in P['gloss'].items() if len(v) > 5 and v[5] == i}
     return l
@@ -102,7 +102,7 @@ def mk(num, title, eyebrow, question, intro, kpis, three, levels, outro, next_q,
     P = dict(num=num, file=BY[num][1], short_title=BY[num][2], title=title, eyebrow=eyebrow, question=question, question_en=f'{num}: ' + levels[0]['node'][3],
       desc=f'{title} — ' + ' · '.join(sh) + '를 직접 해 보는 비전공자용 연구실 해설(강의 「인공지능과 자연어 데이터 분석」).',
       intro=intro, kpis=kpis,
-      hero_talk=hero or [('doc', 'front', f'이번 쪽은 ① {sh[0]} ② {sh[1]} ③ {sh[2]}, 세 칸이에요.'), ('asst', 'smile', '칸마다 실험과 확인 퀴즈를 준비했어요. 수식은 제가 대신 물어볼게요.'), ('fly', 'point', '결과가 나오면 늘 물어봐. 어디서 왔고, 무엇과 비교했지?'), ('robo', 'coin', '새롭고 큰 쪽이 이긴다니까! 얼른 시작하자.')],
+      hero_talk=hero or [('doc', 'front', f'이번 쪽은 ① {sh[0]} ② {sh[1]} ③ {sh[2]}, 세 부분이에요.'), ('asst', 'smile', '부분마다 실험과 확인 퀴즈를 준비했어요. 수식은 제가 대신 물어볼게요.'), ('fly', 'point', '결과가 나오면 늘 물어봐. 어디서 왔고, 무엇과 비교했지?'), ('robo', 'coin', '새롭고 큰 쪽이 이긴다니까! 얼른 시작하자.')],
       three=three, abbr=abbr or [],
       why_steps=[(l['short'], l['why']['problem']) for l in levels],
       big_lead=' → '.join(sh) + ' → 다음 쪽.',
@@ -121,7 +121,7 @@ def mk(num, title, eyebrow, question, intro, kpis, three, levels, outro, next_q,
 def Q(q, o, a, why, hint='', kind='개념'):
     return dict(q=q, o=o, a=a, why=why, hint=hint, kind=kind)
 def G(term, cat, d, en, gid):
-    """칸 용어 하나: {용어: [표시, 분류, 뜻, 영문, id]} — 칸 번호는 mk가 붙인다."""
+    """부분 용어 하나: {용어: [표시, 분류, 뜻, 영문, id]} — 부분 번호는 mk가 붙인다."""
     return {term: [term, cat, d, en, gid]}
 def gl(*gs):
     o = {}

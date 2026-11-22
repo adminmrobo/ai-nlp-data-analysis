@@ -1,4 +1,4 @@
-"""26쪽 확장판 픽셀풍(16비트 RPG 픽셀아트) 표지: 쪽 데이터(제목·칸 이름·용어)로 make_covers.make()를 돌린다."""
+"""26쪽 확장판 픽셀풍(16비트 RPG 픽셀아트) 표지: 쪽 데이터(제목·부분 이름·용어)로 make_covers.make()를 돌린다."""
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import make_covers as MC, build, tower, pixel_cover as PC

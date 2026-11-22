@@ -10,8 +10,8 @@ SIMS.context=function(el,cfg){var c=S0(el,cfg,230,'고른 단어와 문맥이 �
     tw.innerHTML='<p class="muted" style="margin:0 0 6px">예시 문장 '+cfg.sents.length+'개 · "'+esc(cur)+'" 주변에 나온 단어(문맥)</p>'+chips(ctxw.map(function(w){return {w:w,k:'m',s:v[C.voc.indexOf(w)]}}));
     var W=fit(c,230),ctx=c.getContext('2d');ctx.clearRect(0,0,W,230);txt(ctx,'"'+cur+'"와 문맥이 비슷한 단어(코사인 유사도)',16,18,COL.text,13,'left',true);hbars(ctx,110,30,W-180,R,38,function(x){return x.toFixed(2)});stamp(ctx,W,'예시 문장 '+cfg.sents.length+'개');
     K([[esc(R[0].l),'가장 가까운 단어','g'],[R[0].v.toFixed(2),'그 코사인 유사도','i'],[ctxw.length+'개','문맥 단어 종류','a']]);
-    E('단어 벡터 = 주변 단어가 몇 번 나왔는지 센 칸들 → 두 단어 벡터의 <b>코사인 유사도</b>가 높으면 "비슷한 문맥 = 비슷한 뜻"');
-    I([['g','"강아지"와 "고양이"처럼 같은 자리에 들어가는 단어는 문맥 칸이 비슷해져 가까워져요. 분포 가설 그대로입니다.'],['a','이 실험은 주변 단어를 직접 세는 방식이에요. Word2Vec은 세는 대신 "주변 단어 맞히기"를 학습하며 100~300칸의 촘촘한 벡터를 얻습니다.']])}
+    E('단어 벡터 = 주변 단어가 몇 번 나왔는지 센 값들 → 두 단어 벡터의 <b>코사인 유사도</b>가 높으면 "비슷한 문맥 = 비슷한 뜻"');
+    I([['g','"강아지"와 "고양이"처럼 같은 자리에 들어가는 단어는 문맥 값이 비슷해져 가까워져요. 분포 가설 그대로입니다.'],['a','이 실험은 주변 단어를 직접 세는 방식이에요. Word2Vec은 세는 대신 "주변 단어 맞히기"를 학습하며 100~300차원의 촘촘한 벡터를 얻습니다.']])}
   addMod(c,function(dt){if(!dt)draw()});draw()};
 
 SIMS.analogy=function(el,cfg){var H=300,c=S0(el,cfg,H,'단어 벡터 덧셈·뺄셈 그림'),row=ctrlRow(el),K=kpis(el,3),E=eqline(el),I=insight(el),pi=0;
@@ -96,16 +96,16 @@ SIMS.selfattn=function(el,cfg){var box=h('div',{class:'tw'}),c=S0(el,cfg,200,'"�
     box.innerHTML='<p class="muted" style="margin:0 0 6px">문장: <b>'+esc(C.text?C.text+' ':'')+esc(cfg.sent)+'</b> — "밤"이 Query가 되어 문장 안 모든 단어(Key)를 봅니다(셀프 어텐션)</p>'+chips(words.map(function(w,i){return {w:w,k:w==='밤'?'s':'m',s:pct(wt[i],0)}}));
     var W=fit(c,200),ctx=c.getContext('2d');ctx.clearRect(0,0,W,200);txt(ctx,'"밤"의 뜻 판정(주목한 단어들의 표를 가중 평균)',16,18,COL.text,13,'left',true);hbars(ctx,130,30,W-200,[{l:'밤(night)',v:night,c:COL.i},{l:'밤(chestnut)',v:1-night,c:COL.a}],50,function(v){return pct(v,0)});stamp(ctx,W,'설명용 점수');
     var o=wt.map(function(v,j){return [v,j]}).filter(function(x){return words[x[1]]!=='밤'}).sort(function(a,b){return b[0]-a[0]});K([[night>.5?'night(낮과 밤)':'chestnut(먹는 밤)','판정',night>.5?'i':'a'],[pct(Math.max(night,1-night),0),'그 확신',''],[esc(words[o[0][1]]),'가장 주목한 단어','g'],[words.length+'개 → 1단계','RNN은 '+words.length+'걸음, 셀프 어텐션은 한 번에','m']]);
-    E('셀프 어텐션: 문장의 모든 단어가 서로 Q·K로 점수를 매김 → 단어 '+words.length+'개면 점수 '+words.length+' × '+words.length+' = '+words.length*words.length+'칸을 한꺼번에(병렬로) 계산');
+    E('셀프 어텐션: 문장의 모든 단어가 서로 Q·K로 점수를 매김 → 단어 '+words.length+'개면 점수 '+words.length+' × '+words.length+' = '+words.length*words.length+'개를 한꺼번에(병렬로) 계산');
     I([[C.text?'g':'a',C.text?'앞 문장의 단서에 주목해 "밤"의 뜻을 정했어요. 같은 단어도 문맥에 따라 다른 벡터를 갖게 하는 것이 트랜스포머 이후 모델(BERT·GPT)의 힘입니다.':'문맥이 없으면 "밤"은 반반이에요. 앞 문장을 골라 보세요.'],['a','셀프 어텐션만으로는 단어 순서를 몰라서 위치 정보(포지셔널 인코딩)를 더해 줍니다. 점수와 표는 설명용 예시값이에요.']])}
   addMod(c,function(dt){if(!dt)draw()});draw()};
 
 /* ---------- 9회차 ---------- */
-SIMS.gptbert=function(el,cfg){var box=h('div',{class:'tw'}),c=S0(el,cfg,210,'빈칸 후보 확률'),row=ctrlRow(el),K=kpis(el,3),I=insight(el),md='gpt';el.insertBefore(box,c.parentNode);
-  buttons(row,'모델',[['gpt','GPT 방식(왼쪽 문맥만, 다음 단어 예측)'],['bert','BERT 방식(양쪽 문맥, 빈칸 맞히기)']],'gpt',function(v){md=v;draw()});
+SIMS.gptbert=function(el,cfg){var box=h('div',{class:'tw'}),c=S0(el,cfg,210,'빈자리 후보 확률'),row=ctrlRow(el),K=kpis(el,3),I=insight(el),md='gpt';el.insertBefore(box,c.parentNode);
+  buttons(row,'모델',[['gpt','GPT 방식(왼쪽 문맥만, 다음 단어 예측)'],['bert','BERT 방식(양쪽 문맥, 빈자리 맞히기)']],'gpt',function(v){md=v;draw()});
   function draw(){var L=cfg.left,R=cfg.right,P=cfg.p[md],seen=md==='gpt'?L.length:L.length+R.length;
-    box.innerHTML=chips(L.map(function(w){return {w:w,k:'m'}}).concat([{w:'[ ? ]',k:'s'}]).concat(R.map(function(w){return {w:w,k:md==='gpt'?'off':'m'}})))+'<p class="muted" style="font-size:13px;margin:8px 0 0">'+(md==='gpt'?'GPT는 빈칸 오른쪽을 볼 수 없어요(마스크드 어텐션). 취소선 = 보지 못하는 단어':'BERT는 빈칸 앞뒤를 모두 보고 가운데 단어를 맞혀요(마스크 언어모델)')+'</p>';
-    var it=Object.keys(P).map(function(w){return {l:w,v:P[w]}}).sort(function(a,b){return b.v-a.v});it.forEach(function(t,i){t.c=i?COL.s:COL.g});var W=fit(c,210),ctx=c.getContext('2d');ctx.clearRect(0,0,W,210);txt(ctx,'빈칸에 들어갈 단어 후보',16,18,COL.text,13,'left',true);hbars(ctx,90,28,W-160,it,34,function(v){return pct(v,0)});stamp(ctx,W,'설명용 확률');
+    box.innerHTML=chips(L.map(function(w){return {w:w,k:'m'}}).concat([{w:'[ ? ]',k:'s'}]).concat(R.map(function(w){return {w:w,k:md==='gpt'?'off':'m'}})))+'<p class="muted" style="font-size:13px;margin:8px 0 0">'+(md==='gpt'?'GPT는 빈자리 오른쪽을 볼 수 없어요(마스크드 어텐션). 취소선 = 보지 못하는 단어':'BERT는 빈자리 앞뒤를 모두 보고 가운데 단어를 맞혀요(마스크 언어모델)')+'</p>';
+    var it=Object.keys(P).map(function(w){return {l:w,v:P[w]}}).sort(function(a,b){return b.v-a.v});it.forEach(function(t,i){t.c=i?COL.s:COL.g});var W=fit(c,210),ctx=c.getContext('2d');ctx.clearRect(0,0,W,210);txt(ctx,'빈자리에 들어갈 단어 후보',16,18,COL.text,13,'left',true);hbars(ctx,90,28,W-160,it,34,function(v){return pct(v,0)});stamp(ctx,W,'설명용 확률');
     K([[esc(it[0].l),'1위 후보',md==='gpt'?'a':'g'],[pct(it[0].v,0),'그 확률','i'],[seen+'개','참고한 문맥 단어','m']]);
     I([[md==='gpt'?'a':'g',md==='gpt'?'"배송이" 뒤만 보면 "빨라서"도 그럴듯해요. GPT는 이렇게 앞에서부터 한 단어씩 이어 쓰는 생성에 강합니다.':'뒤의 "늦어서 화가 났다"까지 보니 "빨라서"는 거의 사라졌어요. BERT는 문장 전체를 이해하는 분류·개체명 인식·질의응답에 강합니다.'],['a','확률은 두 방식의 차이를 보이려는 설명용 값이에요. 실제 모델의 수치가 아닙니다.']])}
   addMod(c,function(dt){if(!dt)draw()});draw()};

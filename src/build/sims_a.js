@@ -17,8 +17,8 @@ SIMS.rulevsml=function(el,cfg){var H=300,c=S0(el,cfg,H,'대출 신청자 산점�
     var a=mode==='rule'?T1:L[1],b=mode==='rule'?T2:L[2];ctx.fillStyle='rgba(19,138,82,.09)';ctx.fillRect(X(a),Y(b),X(800)-X(a),y0-Y(b));ctx.strokeStyle=mode==='rule'?COL.fly:COL.robo;ctx.lineWidth=2;ctx.setLineDash([6,4]);ctx.strokeRect(X(a),Y(b),X(800)-X(a),y0-Y(b));ctx.setLineDash([]);
     train.forEach(function(p){var x=X(p[0]),y=Y(p[1]);if(p[2]){ctx.fillStyle=COL.g;ctx.beginPath();ctx.arc(x,y,3.4,0,7);ctx.fill()}else{ctx.strokeStyle=COL.r;ctx.lineWidth=1.6;ctx.beginPath();ctx.moveTo(x-3,y-3);ctx.lineTo(x+3,y+3);ctx.moveTo(x+3,y-3);ctx.lineTo(x-3,y+3);ctx.stroke()}});
     ctx.strokeStyle=COL.rule;ctx.beginPath();ctx.moveTo(x0,y0-hh);ctx.lineTo(x0,y0);ctx.lineTo(x0+w,y0);ctx.stroke();[150,300,450,600,750].forEach(function(v){txt(ctx,v,X(v),y0+15,COL.muted,10,'center')});[10,30,50,70,90].forEach(function(v){txt(ctx,v+'%',x0-6,Y(v)+4,COL.muted,10,'right')});
-    txt(ctx,'월소득(만 원) →',x0+w,H-6,COL.muted,11,'right');txt(ctx,'↑ 카드지출 비율',x0+4,16,COL.muted,11);txt(ctx,'● 제때 갚음  ✕ 연체',x0+120,16,COL.text,11);txt(ctx,'초록 칸 = 승인',x0+260,16,COL.g,11,'left',true);stamp(ctx,W,'설명용 모형 · 시드 고정');
-    var ra=ruleAcc(test,T1,T2),ma=ruleAcc(test,L[1],L[2]);K([[pct(ra,1),'전문가 규칙 · 새 신청자 1,000명 정확도','i'],[pct(ma,1),'데이터 기준 · 같은 1,000명 정확도','g'],[nf(L[1])+'만 원 · '+L[2]+'%','지난 200건에서 찾은 기준','m'],[mode==='rule'?'규칙':'학습','지금 그림의 승인 칸','a']]);
+    txt(ctx,'월소득(만 원) →',x0+w,H-6,COL.muted,11,'right');txt(ctx,'↑ 카드지출 비율',x0+4,16,COL.muted,11);txt(ctx,'● 제때 갚음  ✕ 연체',x0+120,16,COL.text,11);txt(ctx,'초록 셀 = 승인',x0+260,16,COL.g,11,'left',true);stamp(ctx,W,'설명용 모형 · 시드 고정');
+    var ra=ruleAcc(test,T1,T2),ma=ruleAcc(test,L[1],L[2]);K([[pct(ra,1),'전문가 규칙 · 새 신청자 1,000명 정확도','i'],[pct(ma,1),'데이터 기준 · 같은 1,000명 정확도','g'],[nf(L[1])+'만 원 · '+L[2]+'%','지난 200건에서 찾은 기준','m'],[mode==='rule'?'규칙':'학습','지금 그림의 승인 구간','a']]);
     E('정확도 = 판정이 실제 결과와 맞은 사람 수 ÷ 전체 → 규칙 <b>'+pct(ra,1)+'</b>, 데이터로 찾은 기준 <em>'+pct(ma,1)+'</em>');
     I([[ma>=ra?'g':'a',ma>=ra?'과거 200건을 보고 기준을 찾으니 새 신청자에게도 잘 맞아요. 머신러닝은 "조건을 사람이 쓰지 않고 데이터에서 찾는 것"이에요.':'지금 전문가 기준이 데이터로 찾은 기준만큼 좋네요. 좋은 전문가 규칙은 여전히 쓸모가 있어요.'],['a','데이터로 찾은 기준은 과거 데이터를 닮아요. 과거 데이터가 적거나 치우치면 기준도 틀어집니다(아래 대결).']])}
   addMod(c,function(dt){if(!dt)draw()});draw()};
@@ -32,7 +32,7 @@ SIMS.units=function(el,cfg){var box=h('div',{class:'tw'}),row=ctrlRow(el),row2=c
     var cnt={};M.filter(function(t){return t.k!=='f'}).forEach(function(t){cnt[t.w]=(cnt[t.w]||0)+1});
     box.innerHTML='<p class="muted" style="margin:0 0 6px">원문: <b>'+esc(S.text)+'</b></p>'+chips(out)+'<p class="muted" style="font-size:13px;margin:8px 0 4px">초록 = 뜻을 가진 조각 · 회색 = 문법 기능(조사·어미) · 주황 = 사전에 없을 수 있는 특수 표현</p>'+'<details class="more"><summary>표(정형 데이터)로 바꾸면</summary>'+tbl(['조각','나온 횟수'],Object.keys(cnt).map(function(k){return {c:[esc(k),cnt[k]],n:[0,1]}}),260)+'</details>';
     var nf_=M.filter(function(t){return t.k==='f'}).length;K([[S.text.replace(/ /g,'').length+'자','글자 수(띄어쓰기 제외)','i'],[S.text.split(' ').length+'개','어절','a'],[M.length+'개','형태소','m'],[(M.length-nf_)+'개','의미 있는 조각','g']]);
-    I([['g',S.note],['a','엑셀 표처럼 칸이 정해져 있지 않아서, 분석하려면 먼저 "어떤 단위로 자를지"를 정해야 해요. 이 일이 3회차의 형태소 분석입니다.']])}
+    I([['g',S.note],['a','엑셀 표처럼 자리가 정해져 있지 않아서, 분석하려면 먼저 "어떤 단위로 자를지"를 정해야 해요. 이 일이 3회차의 형태소 분석입니다.']])}
   draw()};
 
 /* 감성 사전(규칙)으로 리뷰 점수 매기기 */
@@ -124,8 +124,8 @@ SIMS.onehot=function(el,cfg){var H=250,c=S0(el,cfg,H,'원핫과 워드 벡터 �
     if(md==='oh')txt(ctx,'(3차원을 평면에 그린 그림)',cx,H-8,COL.muted,10,'center');
     var mo=V*V*4,me=V*300*4,x0=half+70,w=half-100;txt(ctx,'모든 단어를 담는 데 드는 메모리',half+16,20,COL.text,13,'left',true);var it=[{l:'원핫',v:Math.log10(mo),c:md==='oh'?COL.r:'#e7b8b1'},{l:'워드 벡터',v:Math.log10(me),c:md==='wv'?COL.g:'#a9d4bd'}];hbars(ctx,x0,48,w,it,40,function(v){return byt(Math.pow(10,v))});txt(ctx,'막대 길이는 로그 눈금',x0,H-12,COL.muted,10);stamp(ctx,W,'예시 벡터');
     var cg=md==='oh'?0:cosv(P[names[0]],P[names[1]]),cc=md==='oh'?0:cosv(P[names[0]],P[names[2]]);
-    K([[nf(d),'단어 하나의 벡터 길이','i'],[md==='oh'?pct((V-1)/V,V>1000?3:1):'0%','그중 0인 칸','a'],[cg.toFixed(2)+' / '+cc.toFixed(2),'코사인: '+names[0]+'–'+names[1]+' / '+names[0]+'–'+names[2],'g'],[byt(md==='oh'?mo:me),'전체 메모리(4바이트 실수)','m']]);
-    E(md==='oh'?'원핫: 어휘가 <b>'+nf(V)+'</b>개면 벡터도 <b>'+nf(V)+'</b>칸, 그중 1칸만 1 → 전체 표 = '+nf(V)+' × '+nf(V)+' 칸':'워드 벡터: 어휘 <b>'+nf(V)+'</b>개 × <em>300</em>칸으로 고정 → 단어가 늘어도 칸 수(차원)는 그대로');
+    K([[nf(d),'단어 하나의 벡터 길이','i'],[md==='oh'?pct((V-1)/V,V>1000?3:1):'0%','그중 0인 자리','a'],[cg.toFixed(2)+' / '+cc.toFixed(2),'코사인: '+names[0]+'–'+names[1]+' / '+names[0]+'–'+names[2],'g'],[byt(md==='oh'?mo:me),'전체 메모리(4바이트 실수)','m']]);
+    E(md==='oh'?'원핫: 어휘가 <b>'+nf(V)+'</b>개면 벡터도 <b>'+nf(V)+'</b>차원, 그중 1자리만 1 → 전체 표 = '+nf(V)+' × '+nf(V)+' 개':'워드 벡터: 어휘 <b>'+nf(V)+'</b>개 × <em>300</em>차원으로 고정 → 단어가 늘어도 차원 수는 그대로');
     I([[md==='oh'?'r':'g',md==='oh'?'원핫에서는 '+names[0]+'와 '+names[1]+'도, '+names[0]+'와 '+names[2]+'도 똑같이 무관(코사인 0)해요. 뜻의 가까움을 담지 못합니다.':'워드 벡터에서는 '+names[0]+'와 '+names[1]+'가 가깝고 '+names[2]+'는 멀어요. 숫자 몇백 개로 뜻의 관계를 담습니다.'],['a','그림의 2차원 좌표는 설명용 예시값이에요. 실제 워드 벡터는 보통 100~300차원입니다.']])}
   addMod(c,function(dt){if(!dt)draw()});draw()};
 

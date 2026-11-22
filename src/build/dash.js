@@ -104,7 +104,7 @@ DASHES['07']={tag:'7회차',title:'스팸 분류 평가 대시보드',sub:'스�
 DASHES['08']={tag:'8회차',title:'어텐션 가중치 대시보드',sub:'관련 단어와 나머지 단어의 점수 차, 문장 길이, 벡터 차원 d(√d로 나눔)에 따라 주목이 얼마나 모이나 (설명용 모형)',play:'n',playLabel:'문장을 5→60단어로',
   params:[['n','원문 단어 수',5,60,1,12,function(v){return v+'단어'}],['gap','관련 단어의 점수 차(Q·K)',0,16,.5,6,function(v){return v.toFixed(1)}],['d','벡터 차원 d',1,64,1,4,function(v){return v}]],
   f:function(q){var sc=Math.sqrt(q.d),w=Math.exp(q.gap/sc)/(Math.exp(q.gap/sc)+q.n-1),ns=seqv(5,60,56),ws=[];for(var i=0;i<Math.min(q.n,12);i++)ws.push(i===2?w:(1-w)/(q.n-1));
-    return {k:[[pct(w,0),'관련 단어가 받는 가중치','g'],[pct((1-w)/(q.n-1),1),'나머지 단어 하나의 가중치','i'],[q.n+' 걸음 → 1번','RNN 순차 처리 대 셀프 어텐션','a'],[nf(q.n*q.n)+'칸','셀프 어텐션 점수표 크기(n²)','m']],
+    return {k:[[pct(w,0),'관련 단어가 받는 가중치','g'],[pct((1-w)/(q.n-1),1),'나머지 단어 하나의 가중치','i'],[q.n+' 걸음 → 1번','RNN 순차 처리 대 셀프 어텐션','a'],[nf(q.n*q.n)+'개','셀프 어텐션 점수표 크기(n²)','m']],
       c:[{t:'bar',title:'원문 단어별 가중치(앞 12개까지)',labels:ws.map(function(v,i){return i===2?'관련':String(i+1)}),vals:ws.map(function(v){return v*100}),cols:ws.map(function(v,i){return i===2?COL.m:COL.s}),fy:function(v){return v.toFixed(0)+'%'}},
         {t:'line',title:'문장이 길어지면 관련 단어 가중치는?',xs:ns,ys:[{n:'관련 단어 가중치',c:COL.m,d:ns.map(function(n){return Math.exp(q.gap/sc)/(Math.exp(q.gap/sc)+n-1)*100})}],ymin:0,ymax:100,fy:function(v){return v+'%'},fx:function(v){return v},mark:{x:q.n,y:w*100,l:'지금'},xl:'원문 단어 수'}],
       note:[['g','점수 차가 크면 관련 단어 하나에 주목이 몰려요. 소프트맥스는 가중치 합을 늘 100%로 맞춥니다.'],['a','차원 d가 크면 점수 자체가 커지기 쉬워서 트랜스포머는 √d로 나눠요. 대신 문장 길이 n이 늘면 점수표가 n²로 커지는 비용이 있습니다.']]}}};
